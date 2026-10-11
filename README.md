@@ -19,7 +19,9 @@ Open the printed local URL (normally http://127.0.0.1:5173). Run data, parser, p
 - Clearly labelled rule-based sentiment and complaint grouping.
 - Policy-based priorities with original evidence and an explanation of the calculation.
 - Manual submission and validated CSV import. Optional real dates enable a volume chart.
-- Issue ownership and status tracking, persisted in browser storage.
+- Issue ownership and status tracking with durable private workspace saving and a browser backup.
+- Exact-quote human review, source inspection and provider run provenance for individual feedback.
+- Conflict-safe saves using a D1 revision and immutable R2 snapshots.
 - CSV and Markdown exports; printable reports.
 - Server-side Adaption connection, JSONL upload, credit estimates, run submission, progress polling, result validation and application to source feedback.
 - Durable analysis batches and provider dataset/run provenance in R2.
@@ -29,9 +31,9 @@ Open the printed local URL (normally http://127.0.0.1:5173). Run data, parser, p
 
 ## Honest boundaries
 
-The server-side Adaption integration is available in the studio; check the saved batches for actual provider completion status. Provider results are validated before application. Manually imported files remain identified as user-supplied analysis. Feedback edits and issue tracking remain browser-local. The Site retains its owner-private access policy. The supplied data has no dates, ratings, customer IDs or financial values; none are invented.
+The server-side Adaption integration is available in the studio; check the saved batches for actual provider completion status. Provider results are validated before application. Manually imported files remain identified as user-supplied analysis. Workspace changes save to the server; conflicting updates are rejected and remain available in the browser for export. This is one owner-private workspace, without team collaboration. The supplied data has no dates, ratings, customer IDs or financial values; none are invented.
 
-Set `ADAPTION_API_KEY` through Sites runtime secrets. Never commit the key or expose it in public assets. The `.env.example` documents only its name. R2 uses the `BUCKET` binding. `Prepare analysis` uploads source feedback and requests an estimate; `Start analysis` consumes the displayed provider credits.
+Set `ADAPTION_API_KEY` through Sites runtime secrets. Never commit the key or expose it in public assets. The `.env.example` documents only its name. R2 uses `BUCKET` and D1 uses `DB`; schema migrations are in `drizzle/`. `Prepare analysis` uploads source feedback, explicitly starts preprocessing, and requests an estimate; `Start analysis` consumes the displayed provider credits. A timed-out launch is reconciled against existing provider status, without automatically charging for another submission.
 
 ## Source layout
 

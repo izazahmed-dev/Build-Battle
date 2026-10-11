@@ -35,6 +35,8 @@ export async function handleAdaption(request,env,fetcher=fetch){
     const uploadURL=new URL(created.upload_instructions.url);if(uploadURL.protocol!=='https:'||!/(^|\.)amazonaws\.com$/.test(uploadURL.hostname))throw new ApiError('Unsupported provider upload destination.',502);
     const uploaded=await fetcher(uploadURL.href,{method:'PUT',headers:{'Content-Type':'application/octet-stream'},body:bytes,signal:AbortSignal.timeout(30000)});if(!uploaded.ok)throw new ApiError('The provider upload failed.',502);
     await api(key,`/datasets/${encodeURIComponent(run.dataset_id)}/upload/complete`,{file_size_bytes:bytes.byteLength},fetcher);
+    await api(key,`/datasets/${encodeURIComponent(run.dataset_id)}/start-adaption`,{},fetcher);
+    run.preprocessing_started=true;
     run.status='ingesting';run.stage='Preparing data in Adaption';await save(bucket,run);return json(summary(run),201);
    }catch(error){run.status='failed';run.error=cleanMessage(error.message,key);run.stage='Preparation failed';await save(bucket,run);throw error}
   }
@@ -46,11 +48,16 @@ export async function handleAdaption(request,env,fetcher=fetch){
   if(match[2]==='results'&&request.method==='GET'){if(run.status!=='completed')throw new ApiError('The analysis is not complete yet.',409);return json({run:summary(run),results:run.results,rejections:run.rejections,source_rows:run.rows.map(r=>({id:r.id,review:r.review})),raw_download:`/api/adaption/runs/${run.id}/results`})}
   if(!match[2]&&request.method==='GET'){
    if(['failed','completed','ready'].includes(run.status))return json(summary(run));
-   const {data:status}=await api(key,`/datasets/${encodeURIComponent(run.dataset_id)}/status`,undefined,fetcher);run.progress=status.progress||null;run.updated_at=new Date().toISOString();
+   const {data:status}=await api(key,`/datasets/${encodeURIComponent(run.dataset_id)}/status`,undefined,fetcher);run.progress=status.progress||null;run.provider_status=status.status;run.updated_at=new Date().toISOString();
+   if(run.status==='ingesting'&&status.row_count===null&&!run.preprocessing_started){await api(key,`/datasets/${encodeURIComponent(run.dataset_id)}/start-adaption`,{},fetcher);run.preprocessing_started=true;await save(bucket,run)}
    if(status.status==='failed'){run.status='failed';run.stage='Provider processing failed';run.error=cleanMessage(status.error_data?.message||'Adaption processing failed.',key)}
    else if(run.status==='ingesting'&&status.row_count>0){await quote(key,bucket,run,fetcher)}
-   else if(['running','starting'].includes(run.status)&&status.status==='succeeded'){
+   else if(['running','starting'].includes(run.status)&&['running','succeeded'].includes(status.status)){
+    if(!run.provider_run_id){const {data:metadata}=await api(key,`/datasets/${encodeURIComponent(run.dataset_id)}`,undefined,fetcher);if(metadata.run_id)run.provider_run_id=metadata.run_id}
+    run.status='running';run.stage='Adaption is analyzing feedback';run.error=null;
+    if(status.status==='succeeded'){
     const {raw}=await api(key,`/datasets/${encodeURIComponent(run.dataset_id)}/download?fileFormat=json`,undefined,fetcher);const extracted=extractResults(raw,run.rows);run.results=extracted.results;run.rejections=extracted.rejections;run.status='completed';run.stage='Results validated';run.completed_at=new Date().toISOString();await bucket.put(`adaption/exports/${run.id}.json`,raw,{httpMetadata:{contentType:'application/json'}});
+    }
    }
    await save(bucket,run);return json(summary(run));
   }
