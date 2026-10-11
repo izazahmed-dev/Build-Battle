@@ -4,13 +4,13 @@ A working, responsive website design for the Build Battle 2026 customer-feedback
 
 ## Run
 
-Requires Node.js. No package installation or build step is necessary.
+Requires Node.js >=22.13 and the locked dependencies. Use `npm run install:ci`, then `npm run dev` for a local preview. Use `npm run build` for the hosted server artifact.
 
 ```sh
-npm start
+npm run dev
 ```
 
-Open http://127.0.0.1:4173. Run meaningful data and parser checks with `npm test`.
+Open the printed local URL (normally http://127.0.0.1:5173). Run data, parser, provider-workflow and security checks with `npm test`.
 
 ## Implemented
 
@@ -21,21 +21,28 @@ Open http://127.0.0.1:4173. Run meaningful data and parser checks with `npm test
 - Manual submission and validated CSV import. Optional real dates enable a volume chart.
 - Issue ownership and status tracking, persisted in browser storage.
 - CSV and Markdown exports; printable reports.
-- Adaption input export and validated structured-analysis import.
+- Server-side Adaption connection, JSONL upload, credit estimates, run submission, progress polling, result validation and application to source feedback.
+- Durable analysis batches and provider dataset/run provenance in R2.
+- Adaption input export and manual structured-analysis import as an alternative.
 - Responsive layouts, native accessible dialogs, focus states and keyboard operation.
 - Architecture and delivery plan in the website and in `dist/ARCHITECTURE.md`.
 
 ## Honest boundaries
 
-This is a browser prototype. It has no application server, account system, shared database, automated Adaption calls or completed provider run. Imported provider results are identified as user-supplied analysis. Do not submit it as a completed AI integration until a real Adaption run has been executed, reviewed and demonstrated. Local storage is not multi-user persistence. The supplied data has no dates, ratings, customer IDs or financial values; none are invented.
+The server-side Adaption integration is available in the studio; check the saved batches for actual provider completion status. Provider results are validated before application. Manually imported files remain identified as user-supplied analysis. Feedback edits and issue tracking remain browser-local. The Site retains its owner-private access policy. The supplied data has no dates, ratings, customer IDs or financial values; none are invented.
+
+Set `ADAPTION_API_KEY` through Sites runtime secrets. Never commit the key or expose it in public assets. The `.env.example` documents only its name. R2 uses the `BUCKET` binding. `Prepare analysis` uploads source feedback and requests an estimate; `Start analysis` consumes the displayed provider credits.
 
 ## Source layout
 
-- `dist/index.html`, `style.css`, `app.mjs`: website and interaction design.
-- `dist/engine.mjs`: shared parsing, aggregation and analysis rules.
-- `dist/data.json`: all source CSV records, unchanged review and category values.
-- `dist/ARCHITECTURE.md`: product, system, data and design blueprint.
+- `web/index.html`, `style.css`, `app.mjs`: website source and interaction design.
+- `web/engine.mjs`: shared parsing, aggregation and analysis rules.
+- `web/data.json`: all source CSV records, unchanged review and category values.
+- `web/adaption-client.mjs`: live analysis studio controls.
+- `web/ARCHITECTURE.md`: product, system, data and design blueprint.
+- `server/adaption.mjs`: server-only provider adapter and durable batch workflow.
+- `app/api/adaption/[...path]/route.ts`: hosted API routes.
 - `tests/engine.test.mjs`: data reconciliation and edge-case tests.
-- `server.mjs`: local static preview only.
+- `tests/adaption.test.mjs`: provider workflow, validation, cost confirmation and secret-redaction checks.
 
-The design uses original CSS and inline SVG. DM Sans and Manrope are loaded from Google Fonts; system fallbacks work without them. No runtime JavaScript packages are required.
+The design uses original CSS and inline SVG. DM Sans and Manrope are loaded from Google Fonts; system fallbacks work without them. Vinext and the Sites starter own the server build and hosted authentication integration.

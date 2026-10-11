@@ -2,6 +2,12 @@
 
 Prepared for Build Battle 2026 from all three supplied local files. This blueprint targets the 48-hour, individual-participant brief. It aims for a distinctive, credible demonstration; an award outcome cannot be guaranteed.
 
+## Live integration update
+
+The application now runs through the Sites Vinext server runtime. The Adaption key is a hosted secret named `ADAPTION_API_KEY`; its authentication was verified against the provider. `server/adaption.mjs` implements JSONL dataset upload, asynchronous ingestion checks, credit estimation, idempotent adaptation submission, progress polling, structured-result validation, and application to source feedback. R2 stores batches, source mappings, result validation and provider dataset/run IDs. The browser never receives the provider secret. Analysis starts only after the displayed credit estimate is confirmed. Invalid quotes or unknown source IDs are rejected. Feedback edits and issue tracking still use browser storage; the broader shared-data model below remains the production target.
+
+The website exposes this workflow under Adaption studio. It supports small verification batches and up to 320 distinct texts per batch. A successful connection check alone is not evidence that an analysis run completed; run status and accepted-result counts are shown separately.
+
 ## 1. Product thesis
 
 Help a product or customer-experience lead answer: **What should we fix next, and what customer evidence supports that decision?**
@@ -103,7 +109,7 @@ Application server
 
 React/TypeScript is the proposed production frontend. The delivered design uses browser modules and plain CSS to remain executable without dependency setup. The target backend may use TypeScript throughout; a PostgreSQL-backed job queue avoids introducing Redis solely for this size of workload. Object storage retains source uploads. Start with deterministic SQL aggregates and indexed search, adding vector search only if evaluations establish a need.
 
-The public website build is static. Its local preview server serves files only; it is not the target backend. Browser storage currently persists prototype edits. A production release must replace that storage adapter, not pretend local state is collaboration.
+The current website has a Sites server runtime and durable R2 analysis storage. Browser storage currently persists feedback edits and issue changes. A shared production workspace must replace that storage adapter before claiming collaboration.
 
 ## 6. Logical data model
 
@@ -211,4 +217,4 @@ Avoid scope-expanding integrations, a generic chatbot, a new model-training serv
 
 Implemented: the complete visual and interaction prototype, full sample data, validated import, manual feedback, filtering, rule-based preview, duplicate-aware counts, evidence, priorities, browser-local issue tracking, exports, dated-row chart, Adaption handoff and analysis import.
 
-Remaining before a complete production/hackathon submission: actual Adaption run and evaluation, authenticated API, shared durable database, automated jobs, secure provider credentials, audit history, snapshot sharing, production accessibility audit, reviewer-accessible deployment policy and final demonstration recording. The linked slide deck remains unreviewed because it was inaccessible. No award claim or completed AI integration is implied by this blueprint.
+Remaining before a complete production submission: measured analysis evaluation, shared feedback/issue persistence, additional authorization if the owner-private audience expands, audit history, report snapshot sharing, production accessibility audit, reviewer-accessible deployment policy and final demonstration recording. The linked slide deck remains unreviewed because it was inaccessible. See the saved Adaption batches for actual provider execution state; no award outcome is implied.

@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {prepare,group,summarize,issues,classify,parseCSV,csv,validateEnrichment} from '../dist/engine.mjs';
-const raw=JSON.parse(await readFile(new URL('../dist/data.json',import.meta.url),'utf8'));
+import {prepare,group,summarize,issues,classify,parseCSV,csv,validateEnrichment} from '../web/engine.mjs';
+const raw=JSON.parse(await readFile(new URL('../web/data.json',import.meta.url),'utf8'));
 const rows=prepare(raw);
 test('source reconciliation and duplicate-aware denominator',()=>{assert.equal(rows.length,7000);assert.equal(group(rows).length,320);assert.equal(group(rows).reduce((n,r)=>n+r.count,0),7000);const s=summarize(rows);assert.deepEqual(Object.fromEntries(s.categories.map(x=>[x.name,x.count])),{'Operational Issues':1800,'Fraud and Scam':1755,'Product Feedback':1738,'Customer Service':1707});assert.equal(Object.values(s.sentiments).reduce((a,b)=>a+b),7000);assert.equal(summarize(rows,true).total,320)});
 test('negated fraud does not become a negative allegation',()=>{for(const text of ['I was not a victim of fraud, the seller provided a genuine product as advertised.','No fraudulent activity detected during my purchase.','No signs of fraudulent activity or scam during my transaction.']){assert.equal(classify(text),'Positive');assert.equal(issues(prepare([{review:text,category:'Fraud and Scam'}])).length,0)}});

@@ -3,3 +3,10 @@ node_modules/
 .env*
 !.env.example
 tmp/
+.sites-runtime/
+.wrangler/
+.vinext/
+.next/
+public/
+dist/
+web/.openai/
