@@ -32,10 +32,11 @@ The one disagreement is â€œThe product's design is minimalist and understated.â€
 - Secure Adaption upload, explicit preprocessing, estimates, guarded launch, timeout recovery, status polling, downloads and validation.
 - Durable private workspace snapshots, stale-save prevention, browser backup and portable exports with provider provenance.
 - Responsive phone/desktop layouts, keyboard focus, native modal dialogs, printable reports and architecture explanation.
-- Seventeen passing automated checks plus hosted browser verification of saving, reload, fabricated-evidence rejection, provider application and correction preservation.
+- Eighteen passing automated checks plus hosted browser verification of saving, reload, fabricated-evidence rejection, provider application and correction preservation.
 
 ## Boundaries to state during the demo
 
 The dataset contains no dates, ratings, customer IDs or revenue. No historical growth, customer count or financial-impact claim is invented. Date charts use only genuinely dated imports. Themes and recommended investigations use explicit product rules; they are not claimed as learned root causes. This release is a private workspace or a frozen public demo, without multi-user team collaboration. Independent human evaluation, team membership authorization, broader accessibility auditing and the final recorded demonstration remain external submission work.
 
 Use `DEMO.md` for the three-minute narrative. The source archive excludes credentials and local runtime dependencies.
+
