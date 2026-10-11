@@ -4,7 +4,7 @@ Prepared for Build Battle 2026 from all three supplied local files. This bluepri
 
 ## Live integration update
 
-The application now runs through the Sites Vinext server runtime. The Adaption key is a hosted secret named `ADAPTION_API_KEY`; its authentication was verified against the provider. `server/adaption.mjs` implements JSONL dataset upload, asynchronous ingestion checks, credit estimation, idempotent adaptation submission, progress polling, structured-result validation, and application to source feedback. R2 stores batches, source mappings, result validation and provider dataset/run IDs. The browser never receives the provider secret. Analysis starts only after the displayed credit estimate is confirmed. Invalid quotes or unknown source IDs are rejected. Feedback edits and issue tracking still use browser storage; the broader shared-data model below remains the production target.
+The application now runs through the Sites Vinext server runtime. The Adaption key is a hosted secret named `ADAPTION_API_KEY`; its authentication was verified against the provider. `server/adaption.mjs` implements JSONL dataset upload, asynchronous ingestion checks, credit estimation, idempotent adaptation submission, progress polling, structured-result validation, and application to source feedback. R2 stores batches, source mappings, result validation and provider dataset/run IDs. The browser never receives the provider secret. Analysis starts only after the displayed credit estimate is confirmed. Invalid quotes or unknown source IDs are rejected. Feedback edits and issue tracking now use conflict-safe private server snapshots, with a browser backup. Team collaboration remains the production target.
 
 The website exposes this workflow under Adaption studio. It supports small verification batches and up to 320 distinct texts per batch. A successful connection check alone is not evidence that an analysis run completed; run status and accepted-result counts are shown separately.
 
@@ -107,9 +107,9 @@ Application server
                               metric read models
 ```
 
-React/TypeScript is the proposed production frontend. The delivered design uses browser modules and plain CSS to remain executable without dependency setup. The target backend may use TypeScript throughout; a PostgreSQL-backed job queue avoids introducing Redis solely for this size of workload. Object storage retains source uploads. Start with deterministic SQL aggregates and indexed search, adding vector search only if evaluations establish a need.
+React/TypeScript is the proposed production frontend. The delivered design uses browser modules and plain CSS to keep the interface fast and inspectable while Vinext serves the backend. The target backend may use TypeScript throughout; a PostgreSQL-backed job queue avoids introducing Redis solely for this size of workload. Object storage retains source uploads. Start with deterministic SQL aggregates and indexed search, adding vector search only if evaluations establish a need.
 
-The current website has a Sites server runtime and durable R2 analysis storage. Browser storage currently persists feedback edits and issue changes. A shared production workspace must replace that storage adapter before claiming collaboration.
+The current website has a Sites server runtime and durable R2 analysis storage. D1 tracks the workspace revision and R2 retains immutable feedback, annotation and issue snapshots. The release is an owner-private workspace; team collaboration needs membership-scoped authorization.
 
 ## 6. Logical data model
 

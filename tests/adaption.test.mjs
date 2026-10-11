@@ -14,7 +14,7 @@ test('live pipeline preserves provenance, quotes cost, avoids repeat launch, val
   if(path.endsWith('/upload/complete'))return reply({status:'processing'});
   if(path.endsWith('/start-adaption'))return reply({status:'processing'},202);
   if(path.endsWith('/status'))return reply({row_count:2,status:finished?'succeeded':started?'running':'awaiting_input',progress:started?{percent:30}:null});
-  if(path.endsWith('/adapt')){const config=JSON.parse(init.body);assert.equal(config.recipe_specification.recipes.prompt_rephrase,false);assert.ok(config.column_mapping.context.includes('id'));if(config.estimate)return reply({estimatedCreditsConsumed:2,estimatedMinutes:1});started++;return reply({run_id:'provider-run-1'})}
+  if(path.endsWith('/adapt')){const config=JSON.parse(init.body);assert.equal(config.recipe_specification.recipes.prompt_rephrase,false);assert.ok(config.column_mapping.context.includes('id'));assert.equal(config.column_mapping.completion,'baseline_completion');if(config.estimate)return reply({estimatedCreditsConsumed:2,estimatedMinutes:1});started++;return reply({run_id:'provider-run-1'})}
   if(path.endsWith('/download'))return reply([{enhanced_completion:JSON.stringify({id:'FB-001',sentiment:'Mixed',evidence:'delayed'})},{enhanced_completion:JSON.stringify({id:'FB-002',sentiment:'Positive',evidence:'No fraudulent activity'})},{enhanced_completion:JSON.stringify({id:'unknown',sentiment:'Positive',evidence:'made up'})}]);
   throw Error('Unexpected provider path '+path)
  };
