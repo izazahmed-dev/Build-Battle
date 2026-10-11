@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {prepare,normalize} from '../web/engine.mjs';
+const payload=JSON.parse(await readFile(process.argv[2]||'artifacts/adaption-verification.json','utf8'));
+payload.results=payload.results.map(r=>({...r,method:'Adaption · '+payload.run.prompt_version}));
+const source=new Map(payload.source_rows.map(r=>[r.id,r.review]));
+const labels=new Map(payload.results.map(r=>[normalize(source.get(r.id)),r]));
+const base=prepare(JSON.parse(await readFile('web/data.json','utf8')));
+const enriched=base.flatMap(r=>{const v=labels.get(normalize(r.review));return v&&r.review.includes(v.evidence)?[{...v,id:r.id,provider_run_id:payload.run.provider_run_id,dataset_id:payload.run.dataset_id}]:[]});
+const snapshot={payload,workspace:{imported:[],enriched,saved:{fraud:{name:'Seller trust & payment safety',action:'Review the reported seller transactions, verify payment records, and offer a clear dispute route.',owner:'Trust & Safety',status:'Planned'}}}};
+await writeFile('web/demo-snapshot.json',JSON.stringify(snapshot));console.log('Read-only demo prepared from '+payload.results.length+' verified outputs; no private imports included.');

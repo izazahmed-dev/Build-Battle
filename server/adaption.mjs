@@ -1,3 +1,4 @@
+import {handleDemo} from './demo.mjs';
 import {evaluateRun} from './evaluation.mjs';
 import {normalize, validateEnrichment,classify} from '../web/engine.mjs';
 const BASE='https://api.prod.adaptionlabs.ai/api/v1';
@@ -19,6 +20,7 @@ function completionObject(value){if(value&&typeof value==='object'&&!Array.isArr
 export function extractResults(raw,rows,version=PROMPT_VERSION){let data;try{data=JSON.parse(raw)}catch{data=raw.split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line))}const exported=Array.isArray(data)?data:Array.isArray(data?.rows)?data.rows:Array.isArray(data?.data)?data.data:null;if(!exported)throw new ApiError('Unrecognized Adaption result format.',502);const accepted=[],rejections=[],seen=new Set;for(let index=0;index<exported.length;index++){const entry=exported[index];let result=null;for(const value of [entry.enhanced_completion,entry.adapted_completion,entry.completion,entry.response,entry.output,entry]){const candidate=completionObject(value);if(candidate?.sentiment){result=candidate;break}}try{if(!result)throw Error('No structured sentiment completion.');if(seen.has(result.id))throw Error('Repeated source identifier in provider output.');const v=validateEnrichment([result],rows)[0];seen.add(v.id);accepted.push({...v,method:'Adaption · '+version})}catch(error){rejections.push({row:index+1,id:typeof result?.id==='string'?result.id:null,reason:error.message})}}return {results:accepted,rejections}}
 export async function handleAdaption(request,env,fetcher=fetch){
  try{
+  if(env.PUBLIC_DEMO==='true')return handleDemo(request);
   const key=env.ADAPTION_API_KEY;if(!key)throw new ApiError('The server-side Adaption key is not configured.',503);const bucket=env.BUCKET;if(!bucket)throw new ApiError('Analysis storage is not configured.',503);
   // Hosted dispatch enforces the existing owner-private Site access policy.
   // The same-origin check protects browser mutations; service callers use Sites service authorization.

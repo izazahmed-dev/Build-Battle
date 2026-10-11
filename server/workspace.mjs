@@ -1,3 +1,4 @@
+import {handleDemo} from './demo.mjs';
 const json=(data,status=200)=>new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
 export function validateState(state){
  if(!state||!Array.isArray(state.imported)||!Array.isArray(state.enriched)||!state.saved||typeof state.saved!=='object'||Array.isArray(state.saved))throw Error('Invalid workspace format.');
@@ -10,6 +11,7 @@ export function validateState(state){
 }
 export async function handleWorkspace(request,env){
  try{
+  if(env.PUBLIC_DEMO==='true')return handleDemo(request);
   if(!env.DB||!env.BUCKET)return json({error:'Workspace storage is unavailable.'},503);
   // Sites enforces access to this owner-private workspace.
   if(request.method==='GET'){
