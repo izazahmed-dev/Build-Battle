@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-11T10:54:11.779Z",
-  "provider_run_id": "dataset-9bafbb37-6ee3-4370-8f2d-221f3478c103-1791715291183",
-  "prompt_version": "insightflow-feedback-v1",
+  "generated_at": "2026-10-11T11:04:58.564Z",
+  "provider_run_id": "dataset-fd968ec1-0a74-469a-9e45-8e2ad233557c-1791716066415",
+  "prompt_version": "insightflow-feedback-v2",
   "reference_description": "Judgment sample labelled by the building assistant from original review text, before examining the full-batch provider results. This is not an independent human benchmark or a random holdout. No training is performed.",
   "total_reference_texts": 36,
-  "evaluated_texts": 8,
-  "baseline_agreement": 8,
-  "adaption_agreement": 8,
-  "validated_output_texts": 8,
+  "evaluated_texts": 36,
+  "baseline_agreement": 30,
+  "adaption_agreement": 35,
+  "validated_output_texts": 320,
   "rejected_output_texts": 0,
   "comparison": [
     {
@@ -32,7 +32,7 @@
       "expected": "Negative",
       "baseline": "Negative",
       "adaption": "Negative",
-      "evidence": "I was a victim of fraud, the seller requested additional payment after purchase."
+      "evidence": "I was a victim of fraud"
     },
     {
       "id": "FB-00004",
@@ -73,6 +73,230 @@
       "baseline": "Mixed",
       "adaption": "Mixed",
       "evidence": "I faced several issues while placing my order on the website, but the support team was helpful and resolved them."
+    },
+    {
+      "id": "FB-00009",
+      "review": "The product exceeded my expectations in terms of quality and performance.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "The product exceeded my expectations in terms of quality and performance."
+    },
+    {
+      "id": "FB-00010",
+      "review": "I encountered a minor operational issue with the product, but the seller was responsive and provided a solution.",
+      "expected": "Mixed",
+      "baseline": "Mixed",
+      "adaption": "Mixed",
+      "evidence": "I encountered a minor operational issue with the product, but the seller was responsive and provided a solution."
+    },
+    {
+      "id": "FB-00011",
+      "review": "Customer service was knowledgeable and provided excellent assistance throughout the purchasing process.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "Customer service was knowledgeable and provided excellent assistance throughout the purchasing process."
+    },
+    {
+      "id": "FB-00012",
+      "review": "I was scammed by a fraudulent seller, they provided a low-quality product that did not meet my expectations.",
+      "expected": "Negative",
+      "baseline": "Negative",
+      "adaption": "Negative",
+      "evidence": "I was scammed by a fraudulent seller, they provided a low-quality product that did not meet my expectations."
+    },
+    {
+      "id": "FB-00013",
+      "review": "I had a great experience with the website, it was user-friendly and easy to navigate.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "I had a great experience with the website, it was user-friendly and easy to navigate."
+    },
+    {
+      "id": "FB-00014",
+      "review": "The product arrived in perfect condition and met all my expectations.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "The product arrived in perfect condition and met all my expectations."
+    },
+    {
+      "id": "FB-00015",
+      "review": "Customer service was not helpful and did not provide a satisfactory solution to my issue.",
+      "expected": "Negative",
+      "baseline": "Negative",
+      "adaption": "Negative",
+      "evidence": "Customer service was not helpful and did not provide a satisfactory solution to my issue."
+    },
+    {
+      "id": "FB-00016",
+      "review": "I was a victim of fraud, the seller provided a counterfeit product.",
+      "expected": "Negative",
+      "baseline": "Negative",
+      "adaption": "Negative",
+      "evidence": "I was a victim of fraud, the seller provided a counterfeit product."
+    },
+    {
+      "id": "FB-00017",
+      "review": "The delivery was delayed due to unforeseen circumstances, but the seller was transparent about the situation.",
+      "expected": "Mixed",
+      "baseline": "Mixed",
+      "adaption": "Mixed",
+      "evidence": "The delivery was delayed due to unforeseen circumstances, but the seller was transparent about the situation."
+    },
+    {
+      "id": "FB-00018",
+      "review": "I encountered a minor issue with the product, but the seller was responsive and provided a solution.",
+      "expected": "Mixed",
+      "baseline": "Mixed",
+      "adaption": "Mixed",
+      "evidence": "I encountered a minor issue with the product, but the seller was responsive and provided a solution."
+    },
+    {
+      "id": "FB-00072",
+      "review": "I was not a victim of fraud, the seller provided the genuine product as advertised.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "the seller provided the genuine product as advertised"
+    },
+    {
+      "id": "FB-00076",
+      "review": "I was not a victim of fraud, the seller was transparent and provided a clear refund policy.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "the seller was transparent and provided a clear refund policy"
+    },
+    {
+      "id": "FB-00084",
+      "review": "I was not a victim of fraud, the seller provided a genuine product as advertised.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "the seller provided a genuine product as advertised"
+    },
+    {
+      "id": "FB-00154",
+      "review": "The delivery was delayed by two weeks, which was very inconvenient.",
+      "expected": "Negative",
+      "baseline": "Negative",
+      "adaption": "Negative",
+      "evidence": "The delivery was delayed by two weeks, which was very inconvenient."
+    },
+    {
+      "id": "FB-00223",
+      "review": "The product quality is good, it meets my daily needs.",
+      "expected": "Positive",
+      "baseline": "Unclear",
+      "adaption": "Positive",
+      "evidence": "The product quality is good, it meets my daily needs."
+    },
+    {
+      "id": "FB-00295",
+      "review": "The product is of high quality, it performs well and meets my needs.",
+      "expected": "Positive",
+      "baseline": "Unclear",
+      "adaption": "Positive",
+      "evidence": "The product is of high quality, it performs well and meets my needs."
+    },
+    {
+      "id": "FB-00511",
+      "review": "No fraudulent activity detected during my purchase.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "No fraudulent activity detected during my purchase."
+    },
+    {
+      "id": "FB-00515",
+      "review": "No signs of fraudulent activity or scam during my transaction.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "No signs of fraudulent activity or scam during my transaction."
+    },
+    {
+      "id": "FB-00519",
+      "review": "No fraudulent activity or scam during my purchase.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "No fraudulent activity or scam during my purchase."
+    },
+    {
+      "id": "FB-00522",
+      "review": "Customer service was attentive and provided clear instructions for my concern.",
+      "expected": "Positive",
+      "baseline": "Unclear",
+      "adaption": "Positive",
+      "evidence": "Customer service was attentive and provided clear instructions for my concern."
+    },
+    {
+      "id": "FB-00523",
+      "review": "No fraudulent activity or scam during my transaction.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "No fraudulent activity or scam during my transaction."
+    },
+    {
+      "id": "FB-00527",
+      "review": "No signs of fraudulent activity or scam during my purchase.",
+      "expected": "Positive",
+      "baseline": "Positive",
+      "adaption": "Positive",
+      "evidence": "No signs of fraudulent activity or scam during my purchase."
+    },
+    {
+      "id": "FB-00553",
+      "review": "The product's features are essential and improve my productivity.",
+      "expected": "Positive",
+      "baseline": "Unclear",
+      "adaption": "Positive",
+      "evidence": "The product's features are essential and improve my productivity."
+    },
+    {
+      "id": "FB-00630",
+      "review": "The product's design is minimalist and understated.",
+      "expected": "Unclear",
+      "baseline": "Unclear",
+      "adaption": "Positive",
+      "evidence": "The product's design is minimalist and understated."
+    },
+    {
+      "id": "FB-01674",
+      "review": "Delivery was delayed by a week, which was inconvenient.",
+      "expected": "Negative",
+      "baseline": "Negative",
+      "adaption": "Negative",
+      "evidence": "Delivery was delayed by a week, which was inconvenient."
+    },
+    {
+      "id": "FB-01686",
+      "review": "Delivery was delayed by two weeks, which was very inconvenient.",
+      "expected": "Negative",
+      "baseline": "Negative",
+      "adaption": "Negative",
+      "evidence": "Delivery was delayed by two weeks, which was very inconvenient."
+    },
+    {
+      "id": "FB-01831",
+      "review": "The product's performance is smooth and seamless.",
+      "expected": "Positive",
+      "baseline": "Unclear",
+      "adaption": "Positive",
+      "evidence": "The product's performance is smooth and seamless."
+    },
+    {
+      "id": "FB-01889",
+      "review": "The product's performance is accurate and precise.",
+      "expected": "Positive",
+      "baseline": "Unclear",
+      "adaption": "Positive",
+      "evidence": "The product's performance is accurate and precise."
     }
   ],
   "limitation": "Judgment-sample agreement, not full-dataset accuracy. The reference is assistant-labelled and includes deliberately challenging cases. Exact-quote validity is assessed separately from sentiment correctness."

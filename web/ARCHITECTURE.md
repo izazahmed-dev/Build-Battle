@@ -10,6 +10,10 @@ The website exposes this workflow under Adaption studio. It supports small verif
 
 ## 1. Product thesis
 
+The complete Adaption run processed 320 distinct texts with 320 valid source-linked outputs and zero rejected quotes or IDs. A 36-text assistant-labelled judgment sample shows agreement of 35/36 for Adaption and 30/36 for the current rule baseline. This is not independently measured full-dataset accuracy. The one ambiguous reference disagreement remains visible in the quality panel.
+
+The frozen judge preview contains only original competition data and saved provider results. Browser edits in that mode cannot modify private server snapshots or consume API credits. Before public sharing, `PUBLIC_DEMO=true` switches both API families to the frozen snapshot and blocks mutations. The Site remains private until its owner explicitly chooses a different audience.
+
 Help a product or customer-experience lead answer: **What should we fix next, and what customer evidence supports that decision?**
 
 The primary journey is: import feedback → inspect a recurring issue → verify original evidence → choose an action → assign ownership → share a decision brief. Each screen supports this journey. The dashboard is an entry point, not the entire product.

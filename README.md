@@ -22,6 +22,7 @@ Open the printed local URL (normally http://127.0.0.1:5173). Run data, parser, p
 - Issue ownership and status tracking with durable private workspace saving and a browser backup.
 - Exact-quote human review, source inspection and provider run provenance for individual feedback.
 - Conflict-safe saves using a D1 revision and immutable R2 snapshots.
+- A frozen judge preview sourced only from the supplied competition dataset and verified analysis; no private imports. Paid analysis and server writes are blocked in public demo mode.
 - CSV and Markdown exports; printable reports.
 - Server-side Adaption connection, JSONL upload, credit estimates, run submission, progress polling, result validation and application to source feedback.
 - Durable analysis batches and provider dataset/run provenance in R2.
@@ -36,6 +37,10 @@ The server-side Adaption integration is available in the studio; check the saved
 Set `ADAPTION_API_KEY` through Sites runtime secrets. Never commit the key or expose it in public assets. The `.env.example` documents only its name. R2 uses `BUCKET` and D1 uses `DB`; schema migrations are in `drizzle/`. `Prepare analysis` uploads source feedback, explicitly starts preprocessing, and requests an estimate; `Start analysis` consumes the displayed provider credits. A timed-out launch is reconciled against existing provider status, without automatically charging for another submission.
 
 ## Source layout
+
+The completed full Adaption run processed all 320 distinct texts with zero validation failures. See `SUBMISSION.md`, `artifacts/adaption-full.json`, and `artifacts/evaluation.json` for the exact provider IDs and measured sample limits. The studio includes a quality-review panel. `DEMO.md` contains the demonstration narrative.
+
+`?demo=1#overview` previews the frozen judge workspace while the Site remains private. For an intentionally public demo, set `PUBLIC_DEMO=true` and explicitly choose public Site access. This mode serves only the frozen competition snapshot, blocks server mutations and paid provider calls, and keeps visitor edits local. It never reads private workspace imports. Switching the flag off restores the preserved private backend; do not do so while the Site remains public.
 
 - `web/index.html`, `style.css`, `app.mjs`: website source and interaction design.
 - `web/engine.mjs`: shared parsing, aggregation and analysis rules.
