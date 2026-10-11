@@ -1,5 +1,5 @@
 import {packAnnotations} from './engine.mjs';
-export let demoMode=new URLSearchParams(location.search).get('demo')==='1';
+export let demoMode=new URLSearchParams(location.search).get('demo')==='1'||document.querySelector('meta[name="insightflow-demo"]')?.content==='true';
 let host,revision=0,ready=false,pending=false,saving=false,timer,blocked=false;
 export let workspaceStatus='Connecting to workspace';
 const update=s=>{workspaceStatus=s;if(host)host.render()};
