@@ -32,7 +32,7 @@ Open the printed local URL (normally http://127.0.0.1:5173). Run data, parser, p
 
 ## Honest boundaries
 
-The server-side Adaption integration is available in the studio; check the saved batches for actual provider completion status. Provider results are validated before application. Manually imported files remain identified as user-supplied analysis. Workspace changes save to the server; conflicting updates are rejected and remain available in the browser for export. This is one owner-private workspace, without team collaboration. The supplied data has no dates, ratings, customer IDs or financial values; none are invented.
+The public judge demo shows a verified saved Adaption batch and keeps visitor changes in their browser. Take the guided walkthrough from Overview, inspect before/after labels in analysis quality, and export a brief with owners and tracked status. In private mode, the studio supports live provider analysis and workspace changes save to the server; conflicting updates are rejected and remain available for export. Manually imported files remain identified as user-supplied analysis. Team collaboration is proposed architecture. The supplied data has no dates, ratings, customer IDs or financial values; none are invented.
 
 Set `ADAPTION_API_KEY` through Sites runtime secrets. Never commit the key or expose it in public assets. The `.env.example` documents only its name. R2 uses `BUCKET` and D1 uses `DB`; schema migrations are in `drizzle/`. `Prepare analysis` uploads source feedback, explicitly starts preprocessing, and requests an estimate; `Start analysis` consumes the displayed provider credits. A timed-out launch is reconciled against existing provider status, without automatically charging for another submission.
 
