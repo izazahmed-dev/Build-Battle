@@ -1,0 +1,7 @@
+{
+ "description":"Judgment sample labelled by the building assistant from original review text, before examining the full-batch provider results. This is not an independent human benchmark or a random holdout. No training is performed.",
+ "labels":{
+  "FB-00001":"Positive","FB-00002":"Negative","FB-00003":"Negative","FB-00004":"Mixed","FB-00005":"Mixed","FB-00006":"Positive","FB-00007":"Negative","FB-00008":"Mixed","FB-00009":"Positive","FB-00010":"Mixed","FB-00011":"Positive","FB-00012":"Negative","FB-00013":"Positive","FB-00014":"Positive","FB-00015":"Negative","FB-00016":"Negative","FB-00017":"Mixed","FB-00018":"Mixed",
+  "FB-00072":"Positive","FB-00076":"Positive","FB-00084":"Positive","FB-00154":"Negative","FB-00223":"Positive","FB-00295":"Positive","FB-00511":"Positive","FB-00515":"Positive","FB-00519":"Positive","FB-00522":"Positive","FB-00523":"Positive","FB-00527":"Positive","FB-00553":"Positive","FB-00630":"Unclear","FB-01674":"Negative","FB-01686":"Negative","FB-01831":"Positive","FB-01889":"Positive"
+ }
+}

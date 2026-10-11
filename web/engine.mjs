@@ -9,7 +9,7 @@ export const topics=[
 ];
 export function classify(review){
  const t=normalize(review);
- const safe=t.replace(/not a victim of fraud|no (signs of )?fraudulent activity( or scam)?/g,'safe purchase').replace(/not helpful/g,'unhelpful').replace(/did not meet|does not meet/g,'disappointed');
+ const safe=t.replace(/not a victim of fraud|no (signs of )?fraudulent activity( or scam)?/g,'safe purchase').replace(/not helpful/g,'unhelpful').replace(/did not meet|does not meet/g,'disappointed').replace(/did not provide a satisfactory solution/g,'unresolved').replace(/inconvenient|inconvenience/g,'frustrating');
  const negative=/scam|fraud|counterfeit|unhelpful|unresponsive|unresolved|disappoint|delay|defect|crash|glitch|wrong|damaged|missing|stopped working|frustrat|inconvenien|terrible|low-quality|not as advertised|long time|technical issues|operational issue|minor issue|several issues/.test(safe);
  const positive=/excellent|outstanding|innovative|helpful|friendly|reliable|impressive|exceed|great|perfect|satisfied|satisfactory|useful|responsive|resolved|replacement|solution|on time|informed|transparent|updates|compensation|safe purchase|genuine|durable|well-made|worth|easy|intuitive|efficient|beautiful|elegant|stylish|functional|love|practical|sleek|modern|powerful|robust|advanced|comfortable|convenient|versatile|visually appealing|quality is exceptional|performance is exceptional/.test(safe.replace(/unhelpful|unresponsive|unresolved/g,''));
  return negative?(positive?'Mixed':'Negative'):(positive?'Positive':'Unclear');
