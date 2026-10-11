@@ -6,7 +6,7 @@ InsightFlow turns customer feedback into an inspectable decision: source review 
 
 https://insightflow-build-battle.azurebasil8.chatgpt.site
 
-The current audience is owner-private. A frozen judge preview is available at `?demo=1#overview` after sign-in. It contains only the supplied competition data and verified analysis, allows browser-local exploration, and cannot start paid provider runs or alter the private server workspace. Changing the Site's audience is a separate sharing decision. A public demo deployment must set `PUBLIC_DEMO=true` before changing access.
+The judge demo is public and opens without sign-in. It contains only the supplied competition data and verified analysis, allows browser-local exploration, and cannot start paid provider runs or alter the private server workspace. `PUBLIC_DEMO=true` is active on the deployed server. Anonymous checks returned HTTP 200 for the application and frozen workspace, and HTTP 403 for workspace writes and paid-analysis preparation. To restore private analysis, restrict the Site's audience before disabling public demo mode.
 
 ## Adaption evidence
 
