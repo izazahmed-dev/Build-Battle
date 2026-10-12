@@ -1,0 +1,350 @@
+{
+  "scope": "Relevant local design, frontend, quality and browser skills plus all desktop-web skills from the inspected Vercel agent-skills snapshot and all six official current Next workflow skills. Not all internet skills.",
+  "existing_verified": [
+    {
+      "name": "full-output-enforcement",
+      "path": "/home/linux/.hermes/skills/creative/full-output-enforcement",
+      "sha256": "69d25e5a1086b116c8097e6f5321fe0271c4755ad6f78d403431652395487174"
+    },
+    {
+      "name": "redesign-existing-projects",
+      "path": "/home/linux/.hermes/skills/creative/redesign-existing-projects",
+      "sha256": "ac43c91a10d293de8992f5ba9c6de4e6d2cefce5c395e4e4f7a450d263728041"
+    },
+    {
+      "name": "high-end-visual-design",
+      "path": "/home/linux/.hermes/skills/creative/high-end-visual-design",
+      "sha256": "48dd094ae6dbc185d616c90d200cc10ee56bf3bfa45b30542538dfbcab04416f"
+    },
+    {
+      "name": "awesome-design-md",
+      "path": "/home/linux/.hermes/skills/creative/awesome-design-md",
+      "sha256": "789738fd2f3037643509fab346d83dbe74fb5a9e1b228da1136b7bd23376f314"
+    },
+    {
+      "name": "stitch-design-taste",
+      "path": "/home/linux/.hermes/skills/creative/stitch-design-taste",
+      "sha256": "0a8df3ff8747effee2857d02d4565a2ee7d4647800ddea58c79dfe2f319c65c0"
+    },
+    {
+      "name": "impeccable",
+      "path": "/home/linux/.hermes/skills/creative/impeccable",
+      "sha256": "8c6229f0848033096534c256c3569070c9f1f6485b6bc527ad96de03e012e19f"
+    },
+    {
+      "name": "brandkit",
+      "path": "/home/linux/.hermes/skills/creative/brandkit",
+      "sha256": "e0914cb34d456a977f0c60ca8d264908a1d0eb6c540ed51053d69a28df068fb7"
+    },
+    {
+      "name": "imagegen-frontend-web",
+      "path": "/home/linux/.hermes/skills/creative/imagegen-frontend-web",
+      "sha256": "f50bc704904041405b60bd6b252f9165fb391b574b7e601a5dc6c3d00cb0d0d4"
+    },
+    {
+      "name": "gpt-taste",
+      "path": "/home/linux/.hermes/skills/creative/gpt-taste",
+      "sha256": "ecbc7569fb0c9446ab5b1ba9a1065925f15ee36cbe7b5cc34f5b941de463ca60"
+    },
+    {
+      "name": "image-to-code",
+      "path": "/home/linux/.hermes/skills/creative/image-to-code",
+      "sha256": "f65d9a5544b6d2140c8be71502ef6674d65d310992acc4e132b97195a0e1f9c3"
+    },
+    {
+      "name": "design-taste-frontend",
+      "path": "/home/linux/.hermes/skills/creative/design-taste-frontend",
+      "sha256": "f9aad3ea99ac80860fedb851de1dc42eef377a071136c528351345c4bd643e56"
+    },
+    {
+      "name": "design-taste-frontend-v1",
+      "path": "/home/linux/.hermes/skills/creative/design-taste-frontend-v1",
+      "sha256": "7f677ea1665044e9e5a68393390d5d451d0db91a0fa1ec77e8815413271c4edb"
+    },
+    {
+      "name": "industrial-brutalist-ui",
+      "path": "/home/linux/.hermes/skills/creative/industrial-brutalist-ui",
+      "sha256": "995707493c3d2038603bd37a4e3c14174599c4f7cbb882950e687c2b30e1b016"
+    },
+    {
+      "name": "creative-visual-artifacts",
+      "path": "/home/linux/.hermes/skills/creative/creative-visual-artifacts",
+      "sha256": "d89cce4361f61098d1f70972766464dd3a9e07a36c6604612a66d273f18a6263"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "path": "/home/linux/.hermes/skills/creative/ui-ux-pro-max",
+      "sha256": "9d76fcc59fd899d978b9f64930a8694a6e6aa179d6858efeca5ef80721e59a07"
+    },
+    {
+      "name": "skillui",
+      "path": "/home/linux/.hermes/skills/creative/skillui",
+      "sha256": "ef54bcbfb7343187404f78bcaa05eb30fb12be81636eb4b39616edc1e97036e3"
+    },
+    {
+      "name": "minimalist-ui",
+      "path": "/home/linux/.hermes/skills/creative/minimalist-ui",
+      "sha256": "88e9c7482bc2b00a1de8adae5d12528f61a5653f8fe6d4d2abdcf9d67eeac4f5"
+    },
+    {
+      "name": "software-quality-workflows",
+      "path": "/home/linux/.hermes/skills/software-development/software-quality-workflows",
+      "sha256": "26eb004eb0b3a0ba204cb9cc7c12f21f219e090a92c4f886b8d7eaf9f0f47065"
+    },
+    {
+      "name": "rest-graphql-debug",
+      "path": "/home/linux/.hermes/skills/software-development/rest-graphql-debug",
+      "sha256": "bfd112869e47a944e79919d9ae3e3e4a3e2bef8e02ba4d81cc73e3f8c4bdd137"
+    },
+    {
+      "name": "github-workflows",
+      "path": "/home/linux/.hermes/skills/github/github-workflows",
+      "sha256": "5ada19c29520a1cdbb800dc534e9d3eaf2fb1440e89d6ac681c89c6c2917503b"
+    },
+    {
+      "name": "browse",
+      "path": "/home/linux/.hermes/skills/gstack/browse",
+      "sha256": "71831d78d6d96bbce58ee0502008766891bc1f519f4e6c29ec90238331426271"
+    },
+    {
+      "name": "qa",
+      "path": "/home/linux/.hermes/skills/gstack/qa",
+      "sha256": "2b5ba949be44452e1aed58028205f087cc86017acf130215f3a841d3ae436605"
+    },
+    {
+      "name": "qa-only",
+      "path": "/home/linux/.hermes/skills/gstack/qa-only",
+      "sha256": "810170eb845a36294a49cb0728561f3c7b6b21c84c359d0473ffc96fe57b7a7d"
+    },
+    {
+      "name": "review",
+      "path": "/home/linux/.hermes/skills/gstack/review",
+      "sha256": "3a4908d4d8188a7247cb80e60a4f61061702eaa7dde4d692129099133e6ae05a"
+    },
+    {
+      "name": "design-review",
+      "path": "/home/linux/.hermes/skills/gstack/design-review",
+      "sha256": "3a593fbafbb9251ea400728a510ad4f13cac3bff3fbdc7d2695e5939e605d34c"
+    },
+    {
+      "name": "benchmark",
+      "path": "/home/linux/.hermes/skills/gstack/benchmark",
+      "sha256": "52877699cb27a1963426675d639c3c5f4d92c2a19319c85d951c84972747dbb8"
+    },
+    {
+      "name": "devex-review",
+      "path": "/home/linux/.hermes/skills/gstack/devex-review",
+      "sha256": "89f0fd9a9a04b61964b47de185bc7d13c674776cc4714650f3b67f927ec4fcdf"
+    },
+    {
+      "name": "health",
+      "path": "/home/linux/.hermes/skills/gstack/health",
+      "sha256": "a673994c82f29f756bb0ae82eb6a8817c662ab524566a83415807c4661d23b5b"
+    },
+    {
+      "name": "ship",
+      "path": "/home/linux/.hermes/skills/gstack/ship",
+      "sha256": "bd2e3dc060f36d1ac3e9760096b0f0c84dd56f08b3e5c7d342f46a67f1d1acc0"
+    }
+  ],
+  "new_installed": [
+    {
+      "name": "vercel-react-best-practices",
+      "path": "/home/linux/.hermes/skills/web-development/vercel-react-best-practices",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "source_sha256": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355",
+      "installed_sha256": "84657d36e765909c926911042e87c0c914d09edddd8002ae5cd98ff84b3ac964",
+      "files": 76,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "web-design-guidelines",
+      "path": "/home/linux/.hermes/skills/web-development/web-design-guidelines",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "source_sha256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f",
+      "installed_sha256": "3f899e22843c9456d2697fb70a91a3fc14a42195139c3af219303ea344ef84a2",
+      "files": 1,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "vercel-composition-patterns",
+      "path": "/home/linux/.hermes/skills/web-development/vercel-composition-patterns",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "source_sha256": "e38e0eaa609316b10423a9a138ed95e35099accd3f735585295c8a8f165c28a3",
+      "installed_sha256": "4116905a00dc56ccb55690e3b873dc0ade3b016e26caf249f241f45adba52794",
+      "files": 14,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "vercel-react-view-transitions",
+      "path": "/home/linux/.hermes/skills/web-development/vercel-react-view-transitions",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "source_sha256": "1520343c8814c972fee001cac6d6185976d6eb3f4edcac33afe95c10f3b3228b",
+      "installed_sha256": "048e5009ca6875e844f2f736fda76f12792cef65c4ba252a522ad5f914977da5",
+      "files": 9,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "writing-guidelines",
+      "path": "/home/linux/.hermes/skills/web-development/writing-guidelines",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "source_sha256": "89a5f581193289b80af58b980090aeed535047c8df2b55ccbaae0de40283a99d",
+      "installed_sha256": "c1de8169e3c9f39597e10018ac861dca16afe70f37643646b08db84f37bd29df",
+      "files": 1,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "deploy-to-vercel",
+      "path": "/home/linux/.hermes/skills/web-development/deploy-to-vercel",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "source_sha256": "cfcc3dd479ab2e0ae721ddf39b8af84d977321487672f1487c8d6855f576927b",
+      "installed_sha256": "5a9fa5db7e161bfc191b422611d08fbf379864064cd2cf42bd5def1fe53ea0a4",
+      "files": 3,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "vercel-optimize",
+      "path": "/home/linux/.hermes/skills/web-development/vercel-optimize",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "source_sha256": "95ae2683b30d892d165af92a350c5628b68106f395a59b448857b654e306ed91",
+      "installed_sha256": "dca5c3dd88e40602bd298a1c4613f52b606568b8dad724aa25cff0cea7c7eda3",
+      "files": 156,
+      "script_syntax_checks": [
+        {
+          "path": "scripts/merge-signals.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/prepare-investigation-brief.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/check-docs-fresh.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/build-docs.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/collect-sub-agent-outputs.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/check-citations.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/reconcile-candidates.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/deep-dive.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/verify-finding.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/budget-summary.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/verify-and-regen.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/gate-investigations.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/render-report.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/collect-signals.mjs",
+          "exit": 0
+        },
+        {
+          "path": "scripts/scan-codebase.mjs",
+          "exit": 0
+        }
+      ]
+    },
+    {
+      "name": "next-partial-prefetching-adoption",
+      "path": "/home/linux/.hermes/skills/web-development/next-partial-prefetching-adoption",
+      "repository": "https://github.com/vercel/next.js",
+      "commit": "d8c1c1b0002db8ccb63b58095f338e8bf423fa99",
+      "source_sha256": "258989169e683a33512ce0c7078314a82cd0ad6aa721f0207753773088d8902b",
+      "installed_sha256": "2c3b67e24249db0477fb871fc0cc2d47e014e795cb170678c6f954df4bbadec3",
+      "files": 2,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "next-cache-components-optimizer",
+      "path": "/home/linux/.hermes/skills/web-development/next-cache-components-optimizer",
+      "repository": "https://github.com/vercel/next.js",
+      "commit": "d8c1c1b0002db8ccb63b58095f338e8bf423fa99",
+      "source_sha256": "3d0e8eb9d922538de71def2e75ebfc1e1d5ec86e5eeaf0b3b51f22cc38a29f99",
+      "installed_sha256": "9550e7a8869032dd4a35e8b4a4945de99a8cd28e1e4ec0f2c93be0485729a19e",
+      "files": 4,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "next-bundle-optimizer",
+      "path": "/home/linux/.hermes/skills/web-development/next-bundle-optimizer",
+      "repository": "https://github.com/vercel/next.js",
+      "commit": "d8c1c1b0002db8ccb63b58095f338e8bf423fa99",
+      "source_sha256": "0c73ee3c9c93b9b8489209eb1b5b726c4d2e9caa40d1688fb61022884f8cd0a5",
+      "installed_sha256": "b85652bf2f8309ad7a89c3a1e3c2ae4da13c479d785ef57e0773fdf397841928",
+      "files": 3,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "next-dev-loop",
+      "path": "/home/linux/.hermes/skills/web-development/next-dev-loop",
+      "repository": "https://github.com/vercel/next.js",
+      "commit": "d8c1c1b0002db8ccb63b58095f338e8bf423fa99",
+      "source_sha256": "ca45c937ae77b2dc39399ffbe5afbfabcc1862056a62fd50c76342a32e6f8375",
+      "installed_sha256": "026075b2c6770c0fe4cf26578daac2fbb1e1c90e1bfca66c8a6048fed128ee40",
+      "files": 1,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "next-cache-components-adoption",
+      "path": "/home/linux/.hermes/skills/web-development/next-cache-components-adoption",
+      "repository": "https://github.com/vercel/next.js",
+      "commit": "d8c1c1b0002db8ccb63b58095f338e8bf423fa99",
+      "source_sha256": "20bd3022e370fff23f3c3956c7f02e79edcee451a6533aa8d98f7e0fce40e35e",
+      "installed_sha256": "923a09b40dc985ae326eea694ad1caec43a66259df6912d1c5e0d8f320c4934e",
+      "files": 3,
+      "script_syntax_checks": []
+    },
+    {
+      "name": "next-partial-prefetching-optimizer",
+      "path": "/home/linux/.hermes/skills/web-development/next-partial-prefetching-optimizer",
+      "repository": "https://github.com/vercel/next.js",
+      "commit": "d8c1c1b0002db8ccb63b58095f338e8bf423fa99",
+      "source_sha256": "876634c57c5cfbace95edcbe6c7e9bdea199fa53c09cd177990dc936876db345",
+      "installed_sha256": "54faf7d15a756608026dc279e1118ec75df66a2f839ff215430539ebbf8cdff3",
+      "files": 3,
+      "script_syntax_checks": []
+    }
+  ],
+  "total_verified": 42,
+  "excluded": [
+    "react-native-skills: native mobile",
+    "vercel-cli-with-tokens: unnecessary token-oriented tooling",
+    "retired next-best-practices/next-upgrade: replaced upstream by bundled framework docs",
+    "duplicate assistant variants, fixtures and package caches"
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "base": "http://127.0.0.1:8787",
+  "checkedAt": "2026-10-12T08:38:04.827Z",
+  "checks": [
+    {
+      "width": 1440,
+      "view": "overview",
+      "layout": {
+        "viewport": 1440,
+        "document": 1440,
+        "title": "Your customers. In focus.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "view": "feedback",
+      "layout": {
+        "viewport": 1440,
+        "document": 1440,
+        "title": "Every voice, one place.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "view": "issues",
+      "layout": {
+        "viewport": 1440,
+        "document": 1440,
+        "title": "Make the next move.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "view": "reports",
+      "layout": {
+        "viewport": 1440,
+        "document": 1440,
+        "title": "A brief worth acting on.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "view": "lab",
+      "layout": {
+        "viewport": 1440,
+        "document": 1440,
+        "title": "Adaption studio.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "view": "architecture",
+      "layout": {
+        "viewport": 1440,
+        "document": 1440,
+        "title": "Designed to earn trust.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "view": "overview",
+      "layout": {
+        "viewport": 1024,
+        "document": 1024,
+        "title": "Your customers. In focus.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "view": "feedback",
+      "layout": {
+        "viewport": 1024,
+        "document": 1024,
+        "title": "Every voice, one place.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "view": "issues",
+      "layout": {
+        "viewport": 1024,
+        "document": 1024,
+        "title": "Make the next move.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "view": "reports",
+      "layout": {
+        "viewport": 1024,
+        "document": 1024,
+        "title": "A brief worth acting on.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "view": "lab",
+      "layout": {
+        "viewport": 1024,
+        "document": 1024,
+        "title": "Adaption studio.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "view": "architecture",
+      "layout": {
+        "viewport": 1024,
+        "document": 1024,
+        "title": "Designed to earn trust.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 768,
+      "view": "overview",
+      "layout": {
+        "viewport": 768,
+        "document": 768,
+        "title": "Your customers. In focus.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 768,
+      "view": "feedback",
+      "layout": {
+        "viewport": 768,
+        "document": 768,
+        "title": "Every voice, one place.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 768,
+      "view": "issues",
+      "layout": {
+        "viewport": 768,
+        "document": 768,
+        "title": "Make the next move.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 768,
+      "view": "reports",
+      "layout": {
+        "viewport": 768,
+        "document": 768,
+        "title": "A brief worth acting on.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 768,
+      "view": "lab",
+      "layout": {
+        "viewport": 768,
+        "document": 768,
+        "title": "Adaption studio.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 768,
+      "view": "architecture",
+      "layout": {
+        "viewport": 768,
+        "document": 768,
+        "title": "Designed to earn trust.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "overview",
+      "layout": {
+        "viewport": 390,
+        "document": 390,
+        "title": "Your customers. In focus.",
+        "fonts": true,
+        "overflow": [
+          {
+            "tag": "svg",
+            "class": {}
+          },
+          {
+            "tag": "circle",
+            "class": {}
+          }
+        ]
+      },
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "feedback",
+      "layout": {
+        "viewport": 390,
+        "document": 390,
+        "title": "Every voice, one place.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "issues",
+      "layout": {
+        "viewport": 390,
+        "document": 390,
+        "title": "Make the next move.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "reports",
+      "layout": {
+        "viewport": 390,
+        "document": 390,
+        "title": "A brief worth acting on.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "lab",
+      "layout": {
+        "viewport": 390,
+        "document": 390,
+        "title": "Adaption studio.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "architecture",
+      "layout": {
+        "viewport": 390,
+        "document": 390,
+        "title": "Designed to earn trust.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "overview",
+      "layout": {
+        "viewport": 320,
+        "document": 320,
+        "title": "Your customers. In focus.",
+        "fonts": true,
+        "overflow": [
+          {
+            "tag": "svg",
+            "class": {}
+          },
+          {
+            "tag": "g",
+            "class": {}
+          },
+          {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
+            "tag": "path",
+            "class": {}
+          },
+          {
+            "tag": "circle",
+            "class": {}
+          }
+        ]
+      },
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "feedback",
+      "layout": {
+        "viewport": 320,
+        "document": 320,
+        "title": "Every voice, one place.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "issues",
+      "layout": {
+        "viewport": 320,
+        "document": 320,
+        "title": "Make the next move.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "reports",
+      "layout": {
+        "viewport": 320,
+        "document": 320,
+        "title": "A brief worth acting on.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "lab",
+      "layout": {
+        "viewport": 320,
+        "document": 320,
+        "title": "Adaption studio.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "architecture",
+      "layout": {
+        "viewport": 320,
+        "document": 320,
+        "title": "Designed to earn trust.",
+        "fonts": true,
+        "overflow": []
+      },
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

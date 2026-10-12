@@ -1,0 +1,14 @@
+import {spawn} from 'node:child_process';
+import {rm} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+import {snapshotBuild} from './preview-release.mjs';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const {release,config}=await snapshotBuild(path.join(root,'dist'),path.join(root,'.preview'));
+console.log('Production preview uses an isolated build snapshot. Later builds cannot replace its assets.');
+const grouped=process.platform!=='win32';
+const child=spawn(process.execPath,['--import',path.join(root,'scripts/sites-env.mjs'),path.join(root,'node_modules/wrangler/bin/wrangler.js'),'dev','--config',config,'--local','--persist-to',path.join(root,'.wrangler/state'),'--ip','127.0.0.1','--inspector-port','0'],{cwd:root,stdio:'inherit',detached:grouped});
+const forward=signal=>{try{if(grouped)process.kill(-child.pid,signal);else child.kill(signal)}catch(error){if(error.code!=='ESRCH')console.error('Could not stop preview:',error.message)}};
+for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>forward(signal));
+child.on('error',async error=>{console.error(error.message);await rm(release,{recursive:true,force:true});process.exitCode=1});
+child.on('exit',async(code,signal)=>{await rm(release,{recursive:true,force:true});process.exitCode=code??(signal?1:0)});

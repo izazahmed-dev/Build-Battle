@@ -9,4 +9,6 @@ tmp/
 .next/
 public/
 dist/
+.preview/
 web/.openai/
+tsconfig.tsbuildinfo

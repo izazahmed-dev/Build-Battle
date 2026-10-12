@@ -1,7 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {handleWorkspace,validateState} from '../server/workspace.mjs';
-class DB{head=null;prepare(sql){const db=this;return {bind(...args){return {first:async()=>db.head,run:async()=>{if(sql.startsWith('INSERT')){if(db.head)return {meta:{changes:0}};db.head={revision:args[1],object_key:args[2],updated_at:args[3]}}else{if(db.head?.revision!==args[4])return {meta:{changes:0}};db.head={revision:args[0],object_key:args[1],updated_at:args[2]}}return {meta:{changes:1}}}}}}}}
+class DB{
+ head=null;
+ prepare(sql){return {bind:(...args)=>({first:async()=>this.head,run:async()=>{
+  if(sql.startsWith('INSERT')){if(this.head)return {meta:{changes:0}};this.head={revision:args[1],object_key:args[2],updated_at:args[3]}}
+  else{if(this.head?.revision!==args[4])return {meta:{changes:0}};this.head={revision:args[0],object_key:args[1],updated_at:args[2]}}
+  return {meta:{changes:1}};
+ }})}}
+}
 class Bucket{data=new Map;async put(k,v){this.data.set(k,v)}async get(k){return this.data.has(k)?{json:async()=>JSON.parse(this.data.get(k))}:null}}
 const state={imported:[{id:'NEW-1',review:'Support resolved my problem.',category:'Customer Service',source:'Manual entry',occurred_at:'2026-10-11'}],saved:{support:{name:'Support',action:'Investigate',owner:'CX',status:'Planned'}},enriched:[{id:'NEW-1',sentiment:'Positive',evidence:'resolved',method:'Human-reviewed annotation'}]};
 const req=body=>new Request('https://site.test/api/workspace',body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{});

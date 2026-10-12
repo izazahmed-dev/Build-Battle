@@ -1,0 +1,43 @@
+{
+  "base": "http://127.0.0.1:8787",
+  "checkedAt": "2026-10-12T08:34:14.349Z",
+  "checks": [
+    {
+      "width": 1440,
+      "sourceId": "FB-00140",
+      "sourceUnchanged": true,
+      "lineageRetained": true,
+      "reviewSurvivesReload": true,
+      "manualImportProtected": true,
+      "disagreementLinked": true,
+      "ownerStatusPersisted": true,
+      "download": "/mnt/c/Users/izaza/Documents/Build Battle/insightflow/artifacts/journey/verified-brief-1440.md",
+      "modalAxeViolations": 0
+    },
+    {
+      "width": 390,
+      "sourceId": "FB-00140",
+      "sourceUnchanged": true,
+      "lineageRetained": true,
+      "reviewSurvivesReload": true,
+      "manualImportProtected": true,
+      "disagreementLinked": true,
+      "ownerStatusPersisted": true,
+      "download": "/mnt/c/Users/izaza/Documents/Build Battle/insightflow/artifacts/journey/verified-brief-390.md",
+      "modalAxeViolations": 0
+    },
+    {
+      "width": 320,
+      "sourceId": "FB-00140",
+      "sourceUnchanged": true,
+      "lineageRetained": true,
+      "reviewSurvivesReload": true,
+      "manualImportProtected": true,
+      "disagreementLinked": true,
+      "ownerStatusPersisted": true,
+      "download": "/mnt/c/Users/izaza/Documents/Build Battle/insightflow/artifacts/journey/verified-brief-320.md",
+      "modalAxeViolations": 0
+    }
+  ],
+  "errors": []
+}

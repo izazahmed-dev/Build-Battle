@@ -1,12 +1,17 @@
 import {handleDemo} from './demo.mjs';
+import source from '../web/data.json' with {type:'json'};
+import {prepare} from '../web/engine.mjs';
+import {validatePreviousAnalysis} from '../web/review-policy.mjs';
+const sourceById=new Map(prepare(source).map(r=>[r.id,r]));
 const json=(data,status=200)=>new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
 export function validateState(state){
  if(!state||!Array.isArray(state.imported)||!Array.isArray(state.enriched)||!state.saved||typeof state.saved!=='object'||Array.isArray(state.saved))throw Error('Invalid workspace format.');
  if(state.imported.length>40000||state.enriched.length>60000||Object.keys(state.saved).length>100)throw Error('Workspace capacity exceeded. Export your feedback before adding more.');
  const ids=new Set;
- const imported=state.imported.map(r=>{if(typeof r.id!=='string'||r.id.length>100||ids.has(r.id)||typeof r.review!=='string'||!r.review.trim()||r.review.length>10000)throw Error('Invalid imported feedback.');ids.add(r.id);if(r.occurred_at&&(!/^\d{4}-\d{2}-\d{2}$/.test(r.occurred_at)||!Number.isFinite(Date.parse(r.occurred_at))||new Date(r.occurred_at).toISOString().slice(0,10)!==r.occurred_at))throw Error('Invalid feedback date.');return {id:r.id,review:r.review,category:String(r.category||'Uncategorized').slice(0,100),source:String(r.source||'Imported').slice(0,200),occurred_at:r.occurred_at||null}});
+ const imported=state.imported.map(r=>{if(!r||typeof r.id!=='string'||!r.id.trim()||r.id.length>100||ids.has(r.id)||sourceById.has(r.id)||typeof r.review!=='string'||!r.review.trim()||r.review.length>10000)throw Error('Invalid imported feedback.');ids.add(r.id);if(r.occurred_at&&(!/^\d{4}-\d{2}-\d{2}$/.test(r.occurred_at)||!Number.isFinite(Date.parse(r.occurred_at))||new Date(r.occurred_at).toISOString().slice(0,10)!==r.occurred_at))throw Error('Invalid feedback date.');return {id:r.id,review:r.review,category:String(r.category||'Uncategorized').slice(0,100),source:String(r.source||'Imported').slice(0,200),occurred_at:r.occurred_at||null}});
  const saved=Object.fromEntries(Object.entries(state.saved).map(([id,r])=>{if(!/^[a-z0-9_-]{1,100}$/i.test(id)||!['Planned','In progress','Resolved'].includes(r.status))throw Error('Invalid issue record.');return [id,{name:String(r.name||'').slice(0,200),action:String(r.action||'').slice(0,2000),owner:String(r.owner||'Unassigned').slice(0,100),status:r.status,updated_at:r.updated_at||null}]}));
- const enriched=state.enriched.map(r=>{if(typeof r.id!=='string'||r.id.length>100||!['Positive','Negative','Mixed','Unclear'].includes(r.sentiment)||typeof r.evidence!=='string'||!r.evidence.trim()||r.evidence.length>10000)throw Error('Invalid analysis annotation.');return {id:r.id,sentiment:r.sentiment,evidence:r.evidence,method:String(r.method||'User annotation').slice(0,100),...(r.provider_run_id?{provider_run_id:String(r.provider_run_id).slice(0,200)}:{}),...(r.dataset_id?{dataset_id:String(r.dataset_id).slice(0,200)}:{})}});
+ const evidenceById=new Map([...sourceById,...imported.map(r=>[r.id,r])]),annotationIds=new Set;
+ const enriched=state.enriched.map(r=>{if(!r||typeof r.id!=='string'||r.id.length>100||!['Positive','Negative','Mixed','Unclear'].includes(r.sentiment)||typeof r.evidence!=='string'||!r.evidence.trim()||r.evidence.length>10000)throw Error('Invalid analysis annotation.');const origin=evidenceById.get(r.id);if(!origin||annotationIds.has(r.id)||!origin.review.includes(r.evidence))throw Error('Annotation must have a unique known source and an exact supporting quote.');annotationIds.add(r.id);const method=String(r.method||'User annotation').slice(0,100);let previous_analysis;if(Object.hasOwn(r,'previous_analysis')){if(!/^(Human|Reviewed)/.test(method))throw Error('Only reviewed annotations may retain previous analysis.');previous_analysis=validatePreviousAnalysis(r.previous_analysis,origin.review)}return {id:r.id,sentiment:r.sentiment,evidence:r.evidence,method,...(r.provider_run_id?{provider_run_id:String(r.provider_run_id).slice(0,200)}:{}),...(r.dataset_id?{dataset_id:String(r.dataset_id).slice(0,200)}:{}),...(previous_analysis?{previous_analysis}:{})}});
  return {imported,saved,enriched};
 }
 export async function handleWorkspace(request,env){
@@ -25,7 +30,7 @@ export async function handleWorkspace(request,env){
   if(Number(request.headers.get('content-length')||0)>6_000_000)return json({error:'Workspace is too large. Export your feedback.'},413);
   const raw=await request.text();if(raw.length>6_000_000)return json({error:'Workspace is too large. Export your feedback.'},413);
   let body;try{body=JSON.parse(raw)}catch{return json({error:'Invalid JSON.'},400)}
-  if(!Number.isSafeInteger(body.revision)||body.revision<0)return json({error:'Invalid workspace revision.'},400);
+  if(!Number.isSafeInteger(body.revision)||body.revision<0||body.revision>=Number.MAX_SAFE_INTEGER)return json({error:'Invalid workspace revision.'},400);
   const state=validateState(body.state),revision=body.revision+1,updated_at=new Date().toISOString(),key='workspace/snapshots/'+crypto.randomUUID()+'.json';
   await env.BUCKET.put(key,JSON.stringify(state),{httpMetadata:{contentType:'application/json'}});
   const statement=body.revision===0?env.DB.prepare('INSERT INTO workspace_head (id, revision, object_key, updated_at) VALUES (?, ?, ?, ?) ON CONFLICT(id) DO NOTHING').bind('owner',revision,key,updated_at):env.DB.prepare('UPDATE workspace_head SET revision = ?, object_key = ?, updated_at = ? WHERE id = ? AND revision = ?').bind(revision,key,updated_at,'owner',body.revision);

@@ -1,0 +1,402 @@
+{
+  "base": "http://127.0.0.1:8787",
+  "checkedAt": "2026-10-12T08:37:44.889Z",
+  "pages": [
+    {
+      "key": "overview",
+      "width": 1440,
+      "status": 200,
+      "layout": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "violations": []
+    },
+    {
+      "key": "feedback",
+      "width": 1440,
+      "status": 200,
+      "layout": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "violations": []
+    },
+    {
+      "key": "issues",
+      "width": 1440,
+      "status": 200,
+      "layout": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "violations": []
+    },
+    {
+      "key": "reports",
+      "width": 1440,
+      "status": 200,
+      "layout": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "violations": []
+    },
+    {
+      "key": "lab",
+      "width": 1440,
+      "status": 200,
+      "layout": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "violations": []
+    },
+    {
+      "key": "architecture",
+      "width": 1440,
+      "status": 200,
+      "layout": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "violations": []
+    },
+    {
+      "key": "privacy",
+      "width": 1440,
+      "status": 200,
+      "layout": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "violations": []
+    },
+    {
+      "key": "terms",
+      "width": 1440,
+      "status": 200,
+      "layout": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "violations": []
+    },
+    {
+      "key": "thankyou",
+      "width": 1440,
+      "status": 200,
+      "layout": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "violations": []
+    },
+    {
+      "key": "notfound",
+      "width": 1440,
+      "status": 404,
+      "layout": {
+        "width": 1440,
+        "scroll": 1440
+      },
+      "violations": []
+    },
+    {
+      "key": "overview",
+      "width": 390,
+      "status": 200,
+      "layout": {
+        "width": 390,
+        "scroll": 390
+      },
+      "violations": []
+    },
+    {
+      "key": "feedback",
+      "width": 390,
+      "status": 200,
+      "layout": {
+        "width": 390,
+        "scroll": 390
+      },
+      "violations": []
+    },
+    {
+      "key": "issues",
+      "width": 390,
+      "status": 200,
+      "layout": {
+        "width": 390,
+        "scroll": 390
+      },
+      "violations": []
+    },
+    {
+      "key": "reports",
+      "width": 390,
+      "status": 200,
+      "layout": {
+        "width": 390,
+        "scroll": 390
+      },
+      "violations": []
+    },
+    {
+      "key": "lab",
+      "width": 390,
+      "status": 200,
+      "layout": {
+        "width": 390,
+        "scroll": 390
+      },
+      "violations": []
+    },
+    {
+      "key": "architecture",
+      "width": 390,
+      "status": 200,
+      "layout": {
+        "width": 390,
+        "scroll": 390
+      },
+      "violations": []
+    },
+    {
+      "key": "privacy",
+      "width": 390,
+      "status": 200,
+      "layout": {
+        "width": 390,
+        "scroll": 390
+      },
+      "violations": []
+    },
+    {
+      "key": "terms",
+      "width": 390,
+      "status": 200,
+      "layout": {
+        "width": 390,
+        "scroll": 390
+      },
+      "violations": []
+    },
+    {
+      "key": "thankyou",
+      "width": 390,
+      "status": 200,
+      "layout": {
+        "width": 390,
+        "scroll": 390
+      },
+      "violations": []
+    },
+    {
+      "key": "notfound",
+      "width": 390,
+      "status": 404,
+      "layout": {
+        "width": 390,
+        "scroll": 390
+      },
+      "violations": []
+    },
+    {
+      "key": "overview",
+      "width": 320,
+      "status": 200,
+      "layout": {
+        "width": 320,
+        "scroll": 320
+      },
+      "violations": []
+    },
+    {
+      "key": "feedback",
+      "width": 320,
+      "status": 200,
+      "layout": {
+        "width": 320,
+        "scroll": 320
+      },
+      "violations": []
+    },
+    {
+      "key": "issues",
+      "width": 320,
+      "status": 200,
+      "layout": {
+        "width": 320,
+        "scroll": 320
+      },
+      "violations": []
+    },
+    {
+      "key": "reports",
+      "width": 320,
+      "status": 200,
+      "layout": {
+        "width": 320,
+        "scroll": 320
+      },
+      "violations": []
+    },
+    {
+      "key": "lab",
+      "width": 320,
+      "status": 200,
+      "layout": {
+        "width": 320,
+        "scroll": 320
+      },
+      "violations": []
+    },
+    {
+      "key": "architecture",
+      "width": 320,
+      "status": 200,
+      "layout": {
+        "width": 320,
+        "scroll": 320
+      },
+      "violations": []
+    },
+    {
+      "key": "privacy",
+      "width": 320,
+      "status": 200,
+      "layout": {
+        "width": 320,
+        "scroll": 320
+      },
+      "violations": []
+    },
+    {
+      "key": "terms",
+      "width": 320,
+      "status": 200,
+      "layout": {
+        "width": 320,
+        "scroll": 320
+      },
+      "violations": []
+    },
+    {
+      "key": "thankyou",
+      "width": 320,
+      "status": 200,
+      "layout": {
+        "width": 320,
+        "scroll": 320
+      },
+      "violations": []
+    },
+    {
+      "key": "notfound",
+      "width": 320,
+      "status": 404,
+      "layout": {
+        "width": 320,
+        "scroll": 320
+      },
+      "violations": []
+    }
+  ],
+  "flows": [
+    "Inline required-feedback error; real browser-local add; thank-you route and reload; local feedback survives reload; fabricated quote rejection; real navigation/back metadata; invalid CSV error",
+    "Actual decision-brief download checked for source counts, provenance and limitations",
+    "Do Not Track respected"
+  ],
+  "errors": [],
+  "analytics": [
+    {
+      "consentResponse": 204,
+      "acceptedPayloads": [
+        {
+          "event": "page_view",
+          "page": "overview",
+          "consent": true
+        },
+        {
+          "event": "report_exported",
+          "page": "overview",
+          "consent": true
+        }
+      ],
+      "withdrawalStopped": true
+    }
+  ],
+  "assets": [
+    {
+      "asset": "/style.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "asset": "/app.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/engine.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/decision-brief.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/review-policy.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/privacy.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/workspace-client.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/adaption-client.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/site-config.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/site-client.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/data.json",
+      "status": 200,
+      "contentType": "application/json"
+    },
+    {
+      "asset": "/fonts/dm-sans-latin.woff2",
+      "status": 200,
+      "contentType": "font/woff2"
+    },
+    {
+      "asset": "/fonts/manrope-latin.woff2",
+      "status": 200,
+      "contentType": "font/woff2"
+    },
+    {
+      "asset": "/assets/og-image.png",
+      "status": 200,
+      "contentType": "image/png"
+    }
+  ]
+}

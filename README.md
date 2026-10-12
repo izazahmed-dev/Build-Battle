@@ -21,6 +21,7 @@ Open the printed local URL (normally http://127.0.0.1:5173). Run data, parser, p
 - Manual submission and validated CSV import. Optional real dates enable a volume chart.
 - Issue ownership and status tracking with durable private workspace saving and a browser backup.
 - Exact-quote human review, source inspection and provider run provenance for individual feedback.
+- Decision-chain continuity: issue evidence and AI disagreements link straight to source review and back; human corrections retain the preceding provider annotation as inspectable history; tracked decisions stay in exported briefs even when filters exclude their evidence; exports show the numeric priority calculation and provider dataset/run lineage.
 - Conflict-safe saves using a D1 revision and immutable R2 snapshots.
 - A frozen judge preview sourced only from the supplied competition dataset and verified analysis; no private imports. Paid analysis and server writes are blocked in public demo mode.
 - CSV and Markdown exports; printable reports.
@@ -28,7 +29,7 @@ Open the printed local URL (normally http://127.0.0.1:5173). Run data, parser, p
 - Durable analysis batches and provider dataset/run provenance in R2.
 - Adaption input export and manual structured-analysis import as an alternative.
 - Responsive layouts, native accessible dialogs, focus states and keyboard operation.
-- Architecture and delivery plan in the website and in `dist/ARCHITECTURE.md`.
+- Architecture and delivery plan in the website and in `public/ARCHITECTURE.md` (copied into the production assets).
 
 ## Honest boundaries
 
@@ -40,7 +41,7 @@ Set `ADAPTION_API_KEY` through Sites runtime secrets. Never commit the key or ex
 
 The completed full Adaption run processed all 320 distinct texts with zero validation failures. See `SUBMISSION.md`, `artifacts/adaption-full.json`, and `artifacts/evaluation.json` for the exact provider IDs and measured sample limits. The studio includes a quality-review panel. `DEMO.md` contains the demonstration narrative.
 
-`?demo=1#overview` previews the frozen judge workspace while the Site remains private. For an intentionally public demo, set `PUBLIC_DEMO=true` and explicitly choose public Site access. This mode serves only the frozen competition snapshot, blocks server mutations and paid provider calls, and keeps visitor edits local. It never reads private workspace imports. Switching the flag off restores the preserved private backend; do not do so while the Site remains public.
+`/?demo=1` previews the frozen judge workspace while the Site remains private. For an intentionally public demo, set `PUBLIC_DEMO=true` and explicitly choose public Site access. This mode serves only the frozen competition snapshot, blocks private workspace mutations and paid provider calls; optional consented analytics writes separate aggregate counters, and keeps visitor edits local. It never reads private workspace imports. Switching the flag off restores the preserved private backend; do not do so while the Site remains public.
 
 - `web/index.html`, `style.css`, `app.mjs`: website source and interaction design.
 - `web/engine.mjs`: shared parsing, aggregation and analysis rules.
@@ -52,4 +53,16 @@ The completed full Adaption run processed all 320 distinct texts with zero valid
 - `tests/engine.test.mjs`: data reconciliation and edge-case tests.
 - `tests/adaption.test.mjs`: provider workflow, validation, cost confirmation and secret-redaction checks.
 
-The design uses original CSS and inline SVG. DM Sans and Manrope are loaded from Google Fonts; system fallbacks work without them. Vinext and the Sites starter own the server build and hosted authentication integration.
+The design uses original CSS and inline SVG. DM Sans and Manrope are self-hosted in `web/fonts` with their license files; no Google Fonts request is made. Vinext and the Sites starter own the server build and hosted authentication integration.
+
+## Production checklist and verification
+
+Real routes: `/`, `/feedback`, `/issues`, `/reports`, `/studio`, `/architecture`, `/privacy`, `/terms`, and `/thank-you`. Legacy hash links still work. Every page has server-rendered title/description, canonical/OG/Twitter metadata; unknown paths return a real HTTP 404. The public/indexable routes appear in `sitemap.xml` only when `PUBLIC_DEMO=true`; private workspaces remain unindexed.
+
+The favicon/OG set lives in `web/assets`. Privacy controls keep optional first-party analytics off until consent, with rejection, withdrawal and DNT/GPC support. `/api/analytics` stores only daily event/page counters in D1; set `ANALYTICS_ENABLED=false` to disable it. Pruning on accepted writes maintains a 30-day window; idle-period cleanup is not yet scheduled. No third-party analytics script is installed. Contact information is intentionally omitted on request; operator identification and deletion controls are prerequisites for a general public-service launch.
+
+Run `npm test`, `npm run lint`, and `npm run build`. The final local suite has 53 tests; browser evidence and exact commands are in `artifacts/production-checklist.md`, `artifacts/readiness/audit.json`, and `artifacts/browser/audit.json`. The readiness suite was also run against the built local Worker using `npm run start` at port 8787. Its analytics counters are QA traffic, not customer metrics. `artifacts/demo-narrative.md` contains the timed demo and explanatory judge answers.
+
+The production preview now runs from an isolated `.preview/release-*` snapshot. Rebuilding `dist` while it is running does not change its worker/assets mapping. Stop and restart `npm run start` after a build when you want to display the new version. The readiness suite checks CSS, JavaScript, fonts and data HTTP status/MIME before browser flows.
+
+The latest source changes are local only until explicitly deployed. Do not assume the existing hosted Site matches this checkout.

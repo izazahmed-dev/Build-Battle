@@ -2,7 +2,7 @@
 
 InsightFlow turns customer feedback into an inspectable decision: source review → sentiment → recurring issue → priority → owner → decision brief.
 
-## Live application
+## Existing live application (latest local changes not yet deployed)
 
 https://insightflow-build-battle.azurebasil8.chatgpt.site
 
@@ -29,14 +29,15 @@ The one disagreement is “The product's design is minimalist and understated.�
 - All 7,000 original rows; 320 distinct texts; clear row-versus-text counting.
 - Manual and CSV ingestion, validation, searching, filtering, original-source inspection, and exact-quote correction.
 - Five configurable complaint themes with transparent policy severity and frequency priorities; source evidence, owners and issue status.
+- Human corrections that cannot be overwritten by provider or manual analysis, and that keep the preceding provider annotation visible as inspectable history without changing the original review.
+- Exports whose priority calculations, provider dataset/run lineage and tracked-outside-scope decisions are reproducible from the screen.
 - Secure Adaption upload, explicit preprocessing, estimates, guarded launch, timeout recovery, status polling, downloads and validation.
 - Durable private workspace snapshots, stale-save prevention, browser backup and portable exports with provider provenance.
 - Responsive phone/desktop layouts, keyboard focus, native modal dialogs, printable reports and architecture explanation.
-- Eighteen passing automated checks plus hosted browser verification of saving, reload, fabricated-evidence rejection, provider application and correction preservation.
+- Fifty-three passing automated tests, 30 responsive workspace checks, 30 production-readiness page checks and a 3-width decision-journey suite (source unchanged, provider lineage retained through review, reload persistence, manual-import protection, AI-disagreement handoff, owner/status persistence, real brief download) with no detected WCAG A/AA violations, a successful production build, and local Worker/D1 analytics verification.
 
 ## Boundaries to state during the demo
 
 The dataset contains no dates, ratings, customer IDs or revenue. No historical growth, customer count or financial-impact claim is invented. Date charts use only genuinely dated imports. Themes and recommended investigations use explicit product rules; they are not claimed as learned root causes. This release is a private workspace or a frozen public demo, without multi-user team collaboration. Independent human evaluation, team membership authorization, broader accessibility auditing and the final recorded demonstration remain external submission work.
 
 Use `DEMO.md` for the three-minute narrative. The source archive excludes credentials and local runtime dependencies.
-
