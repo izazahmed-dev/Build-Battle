@@ -53,7 +53,15 @@ The completed full Adaption run processed all 320 distinct texts with zero valid
 - `tests/engine.test.mjs`: data reconciliation and edge-case tests.
 - `tests/adaption.test.mjs`: provider workflow, validation, cost confirmation and secret-redaction checks.
 
-The design uses original CSS and inline SVG. DM Sans and Manrope are self-hosted in `web/fonts` with their license files; no Google Fonts request is made. Vinext and the Sites starter own the server build and hosted authentication integration.
+The design uses original CSS and inline SVG, plus an optional original procedural Three.js evidence lens and GSAP/ScrollTrigger motion. DM Sans and Manrope are self-hosted in `web/fonts` with their license files; no Google Fonts request is made. Vinext and the Sites starter own the server build and hosted authentication integration.
+
+## Optional motion layer
+
+`web/motion-loader.mjs` lazy-loads a locally bundled GSAP entry after idle. `web/motion-entry.mjs` uses native scrolling with small heading/panel reveals, then conditionally imports the Three.js scene only on a visible Overview at >=1000px. `web/evidence-lens.mjs` builds original procedural geometry, caps device pixel ratio at 1.5 and schedules rendering at roughly 30fps; actual device FPS has not been certified. Rendering pauses offscreen/in hidden tabs, and its Pause motion control is keyboard-operable. Route refresh/navigation disposes geometries, materials, renderer, observers and GSAP triggers. Context loss falls back to the existing SVG. This artwork is decorative and does not encode data or model confidence.
+
+Reduced-motion and Save-Data modes download no motion code. Mobile downloads no Three.js chunk. There is no Lenis/scroll-jacking, Rive dependency, Webflow migration, external asset CDN or copied reference-site model. The esbuild output is split into `public/motion` and copied by the existing Vinext build. Proprietary GSAP notices remain in the bundle; `web/assets/MOTION-NOTICES.txt` and `THREE-LICENSE.txt` cover dependency attribution. Do not call GSAP MIT.
+
+Run `QA_PACKAGE_ROOT=/path/to/isolated-qa node scripts/motion-check.mjs` against the production preview. Evidence is in `artifacts/motion/audit.json` and desktop/mobile screenshots. The WebGL check uses Chromium software rendering: it is not real-device FPS evidence. `artifacts/figma-art-direction.md` contains the manual design handoff.
 
 ## Production checklist and verification
 

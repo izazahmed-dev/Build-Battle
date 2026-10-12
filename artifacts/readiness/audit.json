@@ -1,6 +1,6 @@
 {
   "base": "http://127.0.0.1:8787",
-  "checkedAt": "2026-10-12T08:37:44.889Z",
+  "checkedAt": "2026-10-12T12:31:38.272Z",
   "pages": [
     {
       "key": "overview",
@@ -350,6 +350,16 @@
     },
     {
       "asset": "/review-policy.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/motion-loader.mjs",
+      "status": 200,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "asset": "/motion/motion-entry.js",
       "status": 200,
       "contentType": "text/javascript; charset=utf-8"
     },

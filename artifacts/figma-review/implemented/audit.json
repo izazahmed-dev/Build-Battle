@@ -1,0 +1,43 @@
+{
+  "base": "http://127.0.0.1:8787",
+  "checkedAt": "2026-10-12T12:31:10.502Z",
+  "checks": [
+    {
+      "width": 1440,
+      "tourKeyboard": true,
+      "singleOverviewImport": true,
+      "sourceCountsDynamic": true,
+      "providerLabelPreserved": true,
+      "analysisNavigation": true,
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "tourKeyboard": true,
+      "singleOverviewImport": true,
+      "sourceCountsDynamic": true,
+      "providerLabelPreserved": true,
+      "analysisNavigation": true,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "tourKeyboard": true,
+      "singleOverviewImport": true,
+      "sourceCountsDynamic": true,
+      "providerLabelPreserved": true,
+      "analysisNavigation": true,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "tourKeyboard": true,
+      "singleOverviewImport": true,
+      "sourceCountsDynamic": true,
+      "providerLabelPreserved": true,
+      "analysisNavigation": true,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

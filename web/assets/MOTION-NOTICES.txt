@@ -1,0 +1,6 @@
+InsightFlow optional motion dependencies
+
+Three.js 0.186.1 — MIT; full copyright/license at THREE-LICENSE.txt.
+GSAP 3.15.0 and ScrollTrigger — Copyright (c) 2008-2026, GreenSock. All rights reserved. Standard No Charge license: https://gsap.com/standard-license/ . GSAP is not MIT. Retrieved 2026-10-12; effective date on source April 30, 2025, last modified May 30, 2025. InsightFlow uses animations on a feedback web application, not a competing visual animation builder. Proprietary bundle notices are retained by the build.
+
+Lens geometry and choreography are original procedural artwork. No assets or code copied from landonorris.com, Rive artboards, racing helmets, or other submissions. Artwork is decorative, not a quantitative feedback chart.

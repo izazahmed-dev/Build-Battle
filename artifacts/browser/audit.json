@@ -1,6 +1,6 @@
 {
   "base": "http://127.0.0.1:8787",
-  "checkedAt": "2026-10-12T08:38:04.827Z",
+  "checkedAt": "2026-10-12T12:32:06.272Z",
   "checks": [
     {
       "width": 1440,
@@ -82,7 +82,16 @@
         "document": 1024,
         "title": "Your customers. In focus.",
         "fonts": true,
-        "overflow": []
+        "overflow": [
+          {
+            "tag": "svg",
+            "class": {}
+          },
+          {
+            "tag": "circle",
+            "class": {}
+          }
+        ]
       },
       "violations": []
     },
@@ -154,7 +163,40 @@
         "document": 768,
         "title": "Your customers. In focus.",
         "fonts": true,
-        "overflow": []
+        "overflow": [
+          {
+            "tag": "svg",
+            "class": {}
+          },
+          {
+            "tag": "g",
+            "class": {}
+          },
+          {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
+            "tag": "path",
+            "class": {}
+          },
+          {
+            "tag": "path",
+            "class": {}
+          },
+          {
+            "tag": "circle",
+            "class": {}
+          }
+        ]
       },
       "violations": []
     },
@@ -232,7 +274,31 @@
             "class": {}
           },
           {
-            "tag": "circle",
+            "tag": "g",
+            "class": {}
+          },
+          {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
+            "tag": "path",
+            "class": {}
+          },
+          {
+            "tag": "path",
             "class": {}
           }
         ]
@@ -329,11 +395,15 @@
             "class": {}
           },
           {
+            "tag": "ellipse",
+            "class": {}
+          },
+          {
             "tag": "path",
             "class": {}
           },
           {
-            "tag": "circle",
+            "tag": "path",
             "class": {}
           }
         ]

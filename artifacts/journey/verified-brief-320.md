@@ -1,6 +1,6 @@
 # InsightFlow — Customer feedback brief
 
-Generated: 2026-10-12T08:34:27.290Z
+Generated: 2026-10-12T12:32:37.413Z
 Scope: All categories; All sentiments; search=\(none\); count=all rows
 
 ## Evidence base

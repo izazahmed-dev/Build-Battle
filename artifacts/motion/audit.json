@@ -1,0 +1,66 @@
+{
+  "base": "http://127.0.0.1:8787",
+  "checkedAt": "2026-10-12T12:31:18.075Z",
+  "renderer": "software Chromium WebGL; not real-device FPS certification",
+  "checks": [
+    "real Three.js canvas rendered; pause/resume; repeated navigation cleanup; context-loss static fallback",
+    {
+      "width": 1440,
+      "reduce": "reduce",
+      "saveData": false,
+      "disableGPU": false,
+      "motionRequests": 0,
+      "lensRequests": 0,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "reduce": "no-preference",
+      "saveData": true,
+      "disableGPU": false,
+      "motionRequests": 0,
+      "lensRequests": 0,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "reduce": "no-preference",
+      "saveData": false,
+      "disableGPU": false,
+      "motionRequests": 1,
+      "lensRequests": 0,
+      "violations": []
+    },
+    {
+      "width": 320,
+      "reduce": "no-preference",
+      "saveData": false,
+      "disableGPU": false,
+      "motionRequests": 1,
+      "lensRequests": 0,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "reduce": "no-preference",
+      "saveData": false,
+      "disableGPU": true,
+      "motionRequests": 2,
+      "lensRequests": 1,
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "bundles": [
+    {
+      "file": "chunk-UOHQYPM3.js",
+      "bytes": 543255,
+      "gzipBytes": 137357
+    },
+    {
+      "file": "motion-entry.js",
+      "bytes": 116319,
+      "gzipBytes": 45903
+    }
+  ]
+}

@@ -18,7 +18,7 @@ function recordErrors(page){page.on('pageerror',e=>report.errors.push(e.message)
 try{
  report.assets=[];
  const assetContext=await browser.newContext();
- for(const [asset,mime] of [['/style.css','text/css'],['/app.mjs','javascript'],['/engine.mjs','javascript'],['/decision-brief.mjs','javascript'],['/review-policy.mjs','javascript'],['/privacy.mjs','javascript'],['/workspace-client.mjs','javascript'],['/adaption-client.mjs','javascript'],['/site-config.mjs','javascript'],['/site-client.mjs','javascript'],['/data.json','application/json'],['/fonts/dm-sans-latin.woff2','font/woff2'],['/fonts/manrope-latin.woff2','font/woff2'],['/assets/og-image.png','image/png']]){
+ for(const [asset,mime] of [['/style.css','text/css'],['/app.mjs','javascript'],['/engine.mjs','javascript'],['/decision-brief.mjs','javascript'],['/review-policy.mjs','javascript'],['/motion-loader.mjs','javascript'],['/motion/motion-entry.js','javascript'],['/privacy.mjs','javascript'],['/workspace-client.mjs','javascript'],['/adaption-client.mjs','javascript'],['/site-config.mjs','javascript'],['/site-client.mjs','javascript'],['/data.json','application/json'],['/fonts/dm-sans-latin.woff2','font/woff2'],['/fonts/manrope-latin.woff2','font/woff2'],['/assets/og-image.png','image/png']]){
   const response=await assetContext.request.get(base+asset),contentType=response.headers()['content-type']||'';
   report.assets.push({asset,status:response.status(),contentType});
   assert.equal(response.status(),200,asset+' failed: HTML working alone is not a working application');assert.ok(contentType.includes(mime),asset+' incorrect MIME: '+contentType);
@@ -41,7 +41,7 @@ try{
    assert.equal(await page.locator('img:not([alt])').count(),0,'Every image has alt');
    const layout=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert.ok(layout.scroll<=layout.width+1,url+' horizontal page overflow');
    if(width<700&&['overview','feedback','issues','reports','lab','architecture'].includes(key)){
-    assert.equal(await page.locator('.mobile-cta').isVisible(),true);const box=await page.locator('.mobile-cta').boundingBox();assert.ok(box.y+box.height<=901,'Sticky CTA in viewport');
+    if(key==='overview'){assert.equal(await page.locator('.mobile-cta').count(),0,'No duplicate fixed CTA over Overview evidence')}else{assert.equal(await page.locator('.mobile-cta').isVisible(),true);const box=await page.locator('.mobile-cta').boundingBox();assert.ok(box.y+box.height<=901,'Sticky CTA in viewport')}
    }
    if(key==='overview'){
     assert.ok((await page.locator('.quality-strip').innerText()).includes('320 / 320'));assert.ok((await page.locator('.hero').innerText()).includes('1,429'));

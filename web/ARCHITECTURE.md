@@ -8,6 +8,10 @@ The application now runs through the Sites Vinext server runtime. The Adaption k
 
 The website exposes this workflow under Adaption studio. It supports small verification batches and up to 320 distinct texts per batch. A successful connection check alone is not evidence that an analysis run completed; run status and accepted-result counts are shown separately.
 
+## Implemented optical/motion enhancement
+
+The current workspace preserves native scrolling and its original decision journey. An idle-loaded GSAP/ScrollTrigger module adds restrained positional reveals. On visible desktop Overview only, it loads an original procedural Three.js evidence lens; geometry is decorative, not a data chart. Mobile uses the existing SVG. Reduced-motion/Save-Data modes request no motion modules. Pause/resume, offscreen/hidden-tab rendering suspension, route teardown, GPU resource disposal and context-loss fallback are implemented. Local esbuild splitting keeps Three.js out of initial app logic. No Webflow migration, Lenis, Rive, third-party 3D assets or site-specific copied implementation was introduced. See `artifacts/motion/audit.json` for actual software-WebGL tests, not claims of real-device 60fps.
+
 ## 1. Product thesis
 
 The complete Adaption run processed 320 distinct texts with 320 valid source-linked outputs and zero rejected quotes or IDs. A 36-text assistant-labelled judgment sample shows agreement of 35/36 for Adaption and 30/36 for the current rule baseline. This is not independently measured full-dataset accuracy. The one ambiguous reference disagreement remains visible in the quality panel.

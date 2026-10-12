@@ -241,6 +241,22 @@ button.legend-row[aria-pressed="true"],button.category-row[aria-pressed="true"]{
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{.main{padding:0}.report{padding:0}.panel{box-shadow:none;border:0}.report p,.report li,.report blockquote{color:#222}.modal-head{position:static}}
 
+/* Original optical study. A progressive decoration, never a metric/chart. */
+.hero{isolation:isolate;grid-template-columns:1fr}
+@media(min-width:1000px){.hero-content{padding-right:250px}}
+.evidence-scene{position:absolute;right:16px;top:10px;bottom:10px;width:330px;pointer-events:none;overflow:hidden}
+.evidence-scene .orb{position:absolute;inset:0;margin:auto;width:260px;height:230px;opacity:.8;transform:none}
+.evidence-scene canvas{position:absolute;width:100%;height:100%;inset:0;opacity:0;transition:opacity .55s ease}
+.evidence-scene.scene-ready canvas{opacity:1}
+.evidence-scene.scene-ready .orb{opacity:0}
+.scene-caption{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:9px;font-weight:600;letter-spacing:1.6px;color:#b9c6a3}
+.motion-toggle{position:absolute;right:26px;top:16px;border:1px solid #748267;background:#283224;color:#e4ead6;border-radius:4px;padding:8px 12px;min-height:36px;font-size:10px;z-index:2}
+.motion-toggle[hidden]{display:none}
+.motion-toggle:hover{background:#414e35}
+@media(min-width:1200px){.hero{min-height:290px}.hero-content{padding-right:320px}.hero h2{max-width:20ch}}
+@media(max-width:1199px){.evidence-scene{width:210px;right:0}.scene-caption{display:none}}
+@media(max-width:999px){.evidence-scene{width:190px;right:-12px;opacity:.18}.motion-toggle{display:none}.hero-content{position:relative;z-index:1}}
+@media(prefers-reduced-motion:reduce){.evidence-scene canvas{display:none}.evidence-scene .orb{opacity:.7!important}.motion-toggle{display:none}}
 /* Evidence-to-decision proof: use the existing ink/paper system. */
 .decision-heading{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:18px}
 .priority-proof{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:12px;margin:24px 0 14px;padding:20px;background:#eff1e8;border-block:1px solid #d4dccb;font-variant-numeric:tabular-nums}
@@ -302,4 +318,36 @@ button.legend-row[aria-pressed="true"],button.category-row[aria-pressed="true"]{
 }
 @media(max-width:370px){.mobile-cta span{display:none}.mobile-cta{justify-content:center}.mobile-cta .btn{width:100%}.site-header .brand{font-size:19px}.privacy-banner{padding:15px}}
 @media print{.privacy-banner,.site-header .btn,.privacy-links,.mobile-cta,.site-footer button{display:none!important}.site-shell{padding:0}.legal-page{padding:0;max-width:100%}}
+
+/* Figma review: quieter masthead, source proof rail, unobstructed evidence. */
+.overview-head{align-items:center;margin-bottom:24px}
+.overview-head h1{font-size:36px;line-height:43px;font-weight:650}
+.overview-tour{font-size:13px;line-height:21px;min-height:44px;display:inline-flex;align-items:center;gap:8px;margin-top:6px;padding:0;text-align:left}
+.overview-head .actions [data-action="import"]{order:2}
+.overview-head .actions [data-action="report-export"]{order:1}
+.quality-strip{background:transparent;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;padding:12px 0;gap:24px;margin-bottom:22px}
+.quality-strip b{font-size:22px;font-variant-numeric:tabular-nums}
+.quality-strip span{line-height:1.6}
+.quality-strip .textbtn{min-height:44px;white-space:nowrap}
+.hero-content>.btn{min-height:44px}
+@media(min-width:1000px){.overview-head{flex-wrap:nowrap}.overview-head>div:first-child{min-width:0}.overview-head h1{text-wrap:balance}}
+@media(max-width:999px){.overview-head h1{font-size:32px;line-height:1.2}}
+@media(max-width:700px){
+ .overview-head .actions{display:grid;grid-template-columns:1fr 1fr;margin-top:12px}
+ .overview-head .actions [data-action="import"]{order:0}
+ .overview-head .actions .btn{min-height:44px;justify-content:center}
+ .main:has(.overview-head){padding-bottom:32px}
+ .quality-strip{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;padding:12px 0;margin-bottom:16px}
+ .quality-strip>div{min-width:0}
+ .quality-strip>button{grid-column:1/-1;justify-self:stretch;justify-content:flex-start;margin:0;font-size:12px}
+ .quality-strip b{font-size:22px}
+ .hero-content{padding:24px 21px}
+ .hero p{line-height:22px}
+}
+@media(max-width:370px){
+ .overview-head h1{font-size:29px;line-height:1.2}
+ .overview-head .actions .btn{font-size:11px;padding-inline:8px;gap:6px}
+ .hero h2{font-size:25px;line-height:30px}
+ .hero-content{padding:22px 17px}
+}
 
